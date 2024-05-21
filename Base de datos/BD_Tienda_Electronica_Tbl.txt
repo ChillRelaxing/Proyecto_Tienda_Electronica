@@ -1,0 +1,108 @@
+create database DB_Tienda_Electronica
+go
+
+use DB_Tienda_Electronica
+go
+
+----------------------------------
+----------------------------------
+
+select * from Categoria
+
+select * from DetalleVenta
+
+select * from Inventario
+
+select * from Precio
+
+select * from Producto
+
+select * from Venta
+
+----------------------------------
+----------------------------------
+
+-- Insertar dos registros en la tabla Categoria
+INSERT INTO Categoria (Nombre, Descripcion) VALUES
+('Electrónica', 'Productos electrónicos de consumo'),
+('Hogar', 'Productos para el hogar');
+
+-- Insertar dos registros en la tabla Producto
+INSERT INTO Producto (Nombre, Descripcion, ID_Categoria) VALUES
+('Smartphone', 'Teléfono inteligente con pantalla táctil', 1),
+('Televisor LED', 'Televisor de alta definición con tecnología LED', 1);
+
+-- Insertar dos registros en la tabla Precio
+INSERT INTO Precio (PrecioUnitario, ID_Producto) VALUES
+(599.99, 1),
+(799.99, 2);
+
+-- Insertar dos registros en la tabla Venta
+INSERT INTO Venta (FechaVenta, Total_Venta, Descripcion) VALUES
+('2024-05-13', 1199.98, 'Venta de smartphones y televisores'),
+('2024-05-13', 239.98, 'Venta de accesorios para teléfonos móviles');
+
+-- Insertar dos registros en la tabla DetalleVenta
+INSERT INTO DetalleVenta (Cantidad, SubTotal, ID_Venta, ID_Producto) VALUES
+(2, 1199.98, 1, 1),
+(1, 239.98, 2, 1);
+
+-- Insertar dos registros en la tabla Inventario
+INSERT INTO Inventario (ID_Producto, Cantidad, FechaRegistro) VALUES
+(1, 5, '2024-05-13'),
+(2, 10, '2024-05-13');
+
+----------------------------------
+----------------------------------
+
+-- Tabla Producto
+CREATE TABLE Producto (
+    ID_Producto INT PRIMARY KEY IDENTITY(1,1),
+    Nombre NVARCHAR(100) NOT NULL,
+    Descripcion NVARCHAR(255) NOT NULL,
+    ID_Categoria INT NOT NULL,
+    CONSTRAINT FK_Producto_Categoria FOREIGN KEY (ID_Categoria) REFERENCES Categoria(ID_Categoria)
+);
+
+-- Tabla Precio
+CREATE TABLE Precio (
+    ID_Precio INT PRIMARY KEY IDENTITY(1,1),
+    PrecioUnitario MONEY NOT NULL,
+	ID_Producto INT NOT NULL
+    CONSTRAINT FK_Precio_Producto FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
+);
+
+-- Tabla Categoria
+CREATE TABLE Categoria (
+    ID_Categoria INT PRIMARY KEY IDENTITY(1,1),
+    Nombre NVARCHAR(50) NOT NULL,
+	Descripcion NVARCHAR(255) NOT NULL
+);
+
+-- Tabla DetalleVenta
+CREATE TABLE DetalleVenta (
+    ID_DetalleVenta INT PRIMARY KEY IDENTITY(1,1),
+    Cantidad INT NOT NULL,
+    SubTotal DECIMAL(10, 2) NOT NULL,
+	ID_Venta INT NOT NULL,
+    ID_Producto INT NOT NULL,
+    CONSTRAINT FK_DetalleVenta_Venta FOREIGN KEY (ID_Venta) REFERENCES Venta(ID_Venta),
+    CONSTRAINT FK_DetalleVenta_Producto FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
+);
+
+-- Tabla Venta
+CREATE TABLE Venta (
+    ID_Venta INT PRIMARY KEY IDENTITY(1,1),
+    FechaVenta DATETIME NOT NULL,
+	Total_Venta DECIMAL(10,2) NOT NULL,
+	Descripcion NVARCHAR(255) NOT NULL
+);
+
+-- Tabla Inventario
+CREATE TABLE Inventario (
+    ID_Inventario INT PRIMARY KEY IDENTITY(1,1),
+    ID_Producto INT NOT NULL,
+    Cantidad INT NOT NULL,
+    FechaRegistro DATETIME NOT NULL,
+    CONSTRAINT FK_Inventario_Producto FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
+);
