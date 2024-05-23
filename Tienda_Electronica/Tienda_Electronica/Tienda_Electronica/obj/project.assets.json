@@ -8425,11 +8425,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\L e  o\\Downloads\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+      "projectUniqueName": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
       "projectName": "Tienda_Electronica",
-      "projectPath": "C:\\Users\\L e  o\\Downloads\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+      "projectPath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
       "packagesPath": "C:\\Users\\L e  o\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\L e  o\\Downloads\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\obj\\",
+      "outputPath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\L e  o\\AppData\\Roaming\\NuGet\\NuGet.Config",

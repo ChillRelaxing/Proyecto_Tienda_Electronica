@@ -1,0 +1,99 @@
+-- Tabla Producto (actualizada con PrecioUnitario)
+CREATE TABLE Producto (
+    ID_Producto INT PRIMARY KEY IDENTITY(1,1),
+    Nombre_Producto NVARCHAR(100) NOT NULL,
+    Descripcion_Producto NVARCHAR(255) NOT NULL,
+    PrecioUnitario MONEY NOT NULL, -- Nueva columna añadida
+    ID_Categoria INT NOT NULL,
+    CONSTRAINT FK_Producto_Categoria FOREIGN KEY (ID_Categoria) REFERENCES Categoria(ID_Categoria)
+);
+
+-- Tabla Categoria (sin cambios)
+CREATE TABLE Categoria (
+    ID_Categoria INT PRIMARY KEY IDENTITY(1,1),
+    Nombre_Categoria NVARCHAR(50) NOT NULL,
+    Descripcion_Categoria NVARCHAR(255) NOT NULL
+);
+
+-- Tabla DetalleVenta (actualizada con PrecioUnitario)
+CREATE TABLE DetalleVenta (
+    ID_DetalleVenta INT PRIMARY KEY IDENTITY(1,1),
+    Cantidad INT NOT NULL,
+    SubTotal DECIMAL(10, 2) NOT NULL,
+    PrecioUnitario MONEY NOT NULL, -- Nueva columna añadida
+    ID_Venta INT NOT NULL,
+    ID_Producto INT NOT NULL,
+    CONSTRAINT FK_DetalleVenta_Venta FOREIGN KEY (ID_Venta) REFERENCES Venta(ID_Venta),
+    CONSTRAINT FK_DetalleVenta_Producto FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
+);
+
+-- Tabla Venta (sin cambios)
+CREATE TABLE Venta (
+    ID_Venta INT PRIMARY KEY IDENTITY(1,1),
+    FechaVenta DATETIME NOT NULL,
+    Total_Venta DECIMAL(10,2) NOT NULL,
+    Descripcion_Venta NVARCHAR(255) NOT NULL,
+    ID_Cliente INT NOT NULL, -- Nueva columna añadida para la relación con Cliente
+    CONSTRAINT FK_Venta_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)
+);
+
+-- Tabla Inventario (sin cambios)
+CREATE TABLE Inventario (
+    ID_Inventario INT PRIMARY KEY IDENTITY(1,1),
+    Cantidad INT NOT NULL,
+    FechaRegistro DATETIME NOT NULL,
+    ID_Producto INT NOT NULL,
+    CONSTRAINT FK_Inventario_Producto FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
+);
+
+-- Tabla Cliente (nueva tabla añadida)
+CREATE TABLE Cliente (
+    ID_Cliente INT PRIMARY KEY IDENTITY(1,1),
+    Nombre_Cliente NVARCHAR(100) NOT NULL,
+    Direccion_Cliente NVARCHAR(255) NOT NULL,
+    Telefono_Cliente NVARCHAR(20) NOT NULL,
+    Email_Cliente NVARCHAR(100) NOT NULL
+);
+
+INSERT INTO Categoria (Nombre_Categoria, Descripcion_Categoria)
+VALUES ('Electrónica', 'Productos electrónicos como televisores, radios, etc.'),
+       ('Ropa', 'Ropa y accesorios'),
+       ('Alimentos', 'Productos alimenticios');
+
+INSERT INTO Producto (Nombre_Producto, Descripcion_Producto, PrecioUnitario, ID_Categoria)
+VALUES ('Televisor', 'Televisor de 40 pulgadas', 300.00, 1),
+       ('Radio', 'Radio AM/FM', 50.00, 1),
+       ('Camisa', 'Camisa de algodón', 20.00, 2),
+       ('Pantalones', 'Pantalones de mezclilla', 30.00, 2),
+       ('Manzanas', 'Manzanas frescas por kg', 3.00, 3),
+       ('Leche', 'Leche en cartón de 1 litro', 1.50, 3);
+
+
+INSERT INTO Cliente (Nombre_Cliente, Direccion_Cliente, Telefono_Cliente, Email_Cliente)
+VALUES ('Juan Pérez', 'Calle Falsa 123', '123456789', 'juan.perez@example.com'),
+       ('María López', 'Avenida Siempre Viva 456', '987654321', 'maria.lopez@example.com'),
+       ('Carlos Sánchez', 'Boulevard de los Sueños 789', '456123789', 'carlos.sanchez@example.com');
+
+-- Suponiendo que ya tienes IDs de clientes existentes
+INSERT INTO Venta (FechaVenta, Total_Venta, Descripcion_Venta, ID_Cliente)
+VALUES (GETDATE(), 10, 'Venta de prueba', 1),
+       (GETDATE(), 20, 'Venta de prueba 2', 2);
+
+-- Suponiendo que ya tienes IDs de ventas y productos existentes
+INSERT INTO DetalleVenta (Cantidad, SubTotal, PrecioUnitario, ID_Venta, ID_Producto)
+VALUES (1, 300.00, 300.00, 1, 1),
+       (2, 60.00, 30.00, 1, 4),
+       (5, 7.50, 1.50, 2, 6);
+
+
+-- Suponiendo que ya tienes IDs de productos existentes
+INSERT INTO Inventario (Cantidad, FechaRegistro, ID_Producto)
+VALUES (50, GETDATE(), 1),
+       (100, GETDATE(), 2),
+       (200, GETDATE(), 3),
+       (150, GETDATE(), 4),
+       (500, GETDATE(), 5),
+       (300, GETDATE(), 6);
+
+
+
