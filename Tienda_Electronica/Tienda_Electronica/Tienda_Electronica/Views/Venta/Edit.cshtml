@@ -13,7 +13,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-               <input asp-for="ID_Venta" class="form-control" type="hidden" />
+                <input asp-for="ID_Venta" class="form-control" type="hidden" />
             </div>
             <div class="form-group">
                 <label asp-for="FechaVenta" class="control-label"></label>
@@ -31,6 +31,11 @@
                 <span asp-validation-for="Descripcion_Venta" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="ID_Cliente" class="control-label"></label>
+                @Html.DropDownList("ID_Cliente", (SelectList)ViewBag.ID_Cliente, "Seleccione un cliente", new { @class = "form-control" })
+                <span asp-validation-for="ID_Cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -42,5 +47,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

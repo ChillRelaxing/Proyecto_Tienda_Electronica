@@ -11,6 +11,10 @@
 
         public string Descripcion_Venta { get; set; }
 
+        public int ID_Cliente { get; set; }//Añadido
+
+        public string Nombre_Cliente { get; set; } //Añadido
+
     }
 }
 

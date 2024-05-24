@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Tienda_Electronica.Models;
+using Tienda_Electronica.Repositories.Clientes;
 using Tienda_Electronica.Repositories.DetalleVentas;
 using Tienda_Electronica.Repositories.Ventas;
 
@@ -12,16 +13,27 @@ namespace Tienda_Electronica.Controllers
     {
         private readonly IVentaRepository _ventaRepository;
 
+        //
+        private readonly IClienteRepository _clienteRepository;
+        //
+
+
         //Validaciones
         //private readonly IValidator<Venta> _validator;
 
         public VentaController(
-            IVentaRepository ventaRepository
+            IVentaRepository ventaRepository,
+            IClienteRepository clienteRepository //AQUI
 
             //IValidator<Venta> validator
             )
         {
             _ventaRepository = ventaRepository;
+
+            //
+            _clienteRepository = clienteRepository; //
+            //
+
             //
             //_validator = validator;
 
@@ -39,10 +51,12 @@ namespace Tienda_Electronica.Controllers
         {
             return View();
         }
-       
+
         // GET: VentaController/Create
-        public ActionResult Create()
+        // public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
+            ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente");
             return View();
         }
 
@@ -60,7 +74,9 @@ namespace Tienda_Electronica.Controllers
             catch(Exception ex)
             {
                 ViewBag.Error = ex.Message;
-
+                //
+                ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
+                //
                 return View(venta);
             }
         }
@@ -72,6 +88,10 @@ namespace Tienda_Electronica.Controllers
 
             if (venta == null)
                 return NotFound();
+
+            //
+            ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
+            //
 
             return View(venta);
         }
@@ -90,6 +110,10 @@ namespace Tienda_Electronica.Controllers
             catch(Exception ex)
             {
                 ViewBag.Error = ex.Message;
+
+                //
+                ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
+                //
 
                 return View(venta);
             }

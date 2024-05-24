@@ -34,7 +34,7 @@ namespace Tienda_Electronica.Repositories.Ventas
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spVenta_Update",
-                venta
+                new { venta.ID_Venta, venta.FechaVenta, venta.Total_Venta, venta.Descripcion_Venta, venta.ID_Cliente }
                 );
         }
 
@@ -50,7 +50,7 @@ namespace Tienda_Electronica.Repositories.Ventas
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spVenta_Insert",
-                new { venta.FechaVenta, venta.Total_Venta, venta.Descripcion_Venta });
+                new { venta.FechaVenta, venta.Total_Venta, venta.Descripcion_Venta, venta.ID_Cliente});
         }
 
     }

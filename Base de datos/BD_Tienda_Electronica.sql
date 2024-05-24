@@ -25,7 +25,10 @@ select * from Venta --F
 CREATE PROCEDURE dbo.spVenta_GetAll
 AS
 BEGIN
-	SELECT ID_Venta, FechaVenta, Total_Venta, Descripcion_Venta, ID_Cliente FROM Venta
+    SELECT Venta.ID_Venta, Venta.FechaVenta, Venta.Total_Venta, Venta.Descripcion_Venta, 
+           Cliente.ID_Cliente, Cliente.Nombre_Cliente
+    FROM Venta
+    INNER JOIN Cliente ON Venta.ID_Cliente = Cliente.ID_Cliente
 END;
 
 EXEC dbo.spVenta_GetAll
@@ -36,65 +39,71 @@ CREATE PROCEDURE dbo.spVenta_GetById
 (@ID_Venta INT)
 AS
 BEGIN
-	SELECT ID_Venta, FechaVenta, Total_Venta, Descripcion_Venta, ID_Cliente
-	FROM Venta
-    WHERE ID_Venta = @ID_Venta
+    SELECT Venta.ID_Venta, Venta.FechaVenta, Venta.Total_Venta, Venta.Descripcion_Venta, 
+           Cliente.ID_Cliente, Cliente.Nombre_Cliente
+    FROM Venta
+    INNER JOIN Cliente ON Venta.ID_Cliente = Cliente.ID_Cliente
+    WHERE Venta.ID_Venta = @ID_Venta
 END;
 
 EXEC dbo.spVenta_GetById 1
+
 
 ----------------------------------
 
 CREATE PROCEDURE dbo.spVenta_Update
 (
-	@FechaVenta datetime,
-	@Total_Venta decimal(10,2),
-	@Descripcion_Venta nvarchar(255),
-	@ID_Cliente int,
-	@ID_Venta int
+    @FechaVenta datetime,
+    @Total_Venta decimal(10,2),
+    @Descripcion_Venta nvarchar(255),
+    @ID_Cliente int,
+    @ID_Venta int
 )
 AS
 BEGIN
-	UPDATE Venta 
-	SET FechaVenta = @FechaVenta,
-		Total_Venta = @Total_Venta,
-		Descripcion_Venta = @Descripcion_Venta,
-		ID_Cliente = @ID_Cliente
+    UPDATE Venta 
+    SET FechaVenta = @FechaVenta,
+        Total_Venta = @Total_Venta,
+        Descripcion_Venta = @Descripcion_Venta,
+        ID_Cliente = @ID_Cliente
     WHERE ID_Venta = @ID_Venta
 END;
 
 EXEC dbo.spVenta_Update '2025-05-13 00:00:00.000', 2000.98, 'Venta televisores', 1, 1
 
-select * from Venta
+SELECT * FROM Venta
+
 
 ----------------------------------
 
 CREATE PROCEDURE dbo.spVenta_Insert
 (
-	@FechaVenta datetime,
-	@Total_Venta decimal(10,2),
-	@Descripcion_Venta nvarchar(255),
-	@ID_Cliente int
+    @FechaVenta datetime,
+    @Total_Venta decimal(10,2),
+    @Descripcion_Venta nvarchar(255),
+    @ID_Cliente int
 )
 AS
 BEGIN
-	INSERT INTO Venta (FechaVenta, Total_Venta, Descripcion_Venta, ID_Cliente)
-	VALUES(@FechaVenta, @Total_Venta, @Descripcion_Venta, @ID_Cliente)
+    INSERT INTO Venta (FechaVenta, Total_Venta, Descripcion_Venta, ID_Cliente)
+    VALUES(@FechaVenta, @Total_Venta, @Descripcion_Venta, @ID_Cliente)
 END;
 
 EXEC dbo.spVenta_Insert '2026-05-13 00:00:00.000', 300.25, 'Venta de Comida', 1
 
 SELECT * FROM Venta
+
+
 ----------------------------------
 
-CREATE PROCEDURE dbo.spVenta_Delete
+ALTER PROCEDURE dbo.spVenta_Delete
 (@ID_Venta int)
 AS
 BEGIN
-	DELETE FROM Venta WHERE ID_Venta = @ID_Venta
+    DELETE FROM Venta WHERE ID_Venta = @ID_Venta
 END;
 
-EXEC dbo.spVenta_Delete 2
+EXEC dbo.spVenta_Delete 4
 
 ----------------------------------
 ----------------------------------

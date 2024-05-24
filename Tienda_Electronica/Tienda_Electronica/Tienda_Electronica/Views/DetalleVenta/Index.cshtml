@@ -16,44 +16,52 @@
                 @Html.DisplayNameFor(model => model.ID_DetalleVenta)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Nombre_Producto)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioUnitario)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SubTotal)
             </th>
             <th>
-                 @Html.DisplayNameFor(model => model.FechaVenta) 
-             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre_Producto)
+                @Html.DisplayNameFor(model => model.FechaVenta)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_DetalleVenta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaVenta) 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre_Producto)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_DetalleVenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioUnitario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaVenta)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+

@@ -12,11 +12,6 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           @*  <div class="form-group">
-                <label asp-for="ID_Venta" class="control-label"></label>
-                <input asp-for="ID_Venta" class="form-control" />
-                <span asp-validation-for="ID_Venta" class="text-danger"></span>
-            </div> *@
             <div class="form-group">
                 <label asp-for="FechaVenta" class="control-label"></label>
                 <input asp-for="FechaVenta" class="form-control" />
@@ -33,6 +28,11 @@
                 <span asp-validation-for="Descripcion_Venta" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="ID_Cliente" class="control-label"></label>
+                @Html.DropDownList("ID_Cliente", (SelectList)ViewBag.ID_Cliente, "Seleccione un cliente", new { @class = "form-control" })
+                <span asp-validation-for="ID_Cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -44,5 +44,9 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+

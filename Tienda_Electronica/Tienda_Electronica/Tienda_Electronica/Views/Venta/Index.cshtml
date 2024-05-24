@@ -24,30 +24,37 @@
             <th>
                 @Html.DisplayNameFor(model => model.Descripcion_Venta)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Cliente)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_Venta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaVenta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total_Venta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion_Venta)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID_Venta}) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID_Venta})
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Venta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaVenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_Venta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion_Venta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Cliente)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Venta }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_Venta }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_Venta })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
