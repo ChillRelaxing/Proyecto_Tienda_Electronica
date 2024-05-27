@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Tienda_Electronica.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Clientes</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nuevo Cliente</a>
+</p>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion_Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono_Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email_Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion_Cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono_Cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email_Cliente)
+                </td>
+                <td>
+                    <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID_Cliente })">Editar</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID_Cliente })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
