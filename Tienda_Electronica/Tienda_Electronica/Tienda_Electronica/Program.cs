@@ -5,6 +5,7 @@ using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Categorias;
 using Tienda_Electronica.Repositories.Clientes;
 using Tienda_Electronica.Repositories.DetalleVentas;
+using Tienda_Electronica.Repositories.Inventarios;
 using Tienda_Electronica.Repositories.Productos;
 using Tienda_Electronica.Repositories.Ventas;
 
@@ -32,6 +33,8 @@ builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+
+
 
 
 
