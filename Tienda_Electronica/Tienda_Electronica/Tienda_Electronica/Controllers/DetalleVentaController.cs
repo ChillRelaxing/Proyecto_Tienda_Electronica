@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Tienda_Electronica.Data;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.DetalleVentas;
+using Tienda_Electronica.Repositories.Productos;
 using Tienda_Electronica.Repositories.Ventas;
 
 namespace Tienda_Electronica.Controllers
@@ -11,21 +13,33 @@ namespace Tienda_Electronica.Controllers
     {
         private readonly IDetalleVentaRepository _detalleVentaRepository;
 
+        //
+        private readonly IVentaRepository _ventaRepository;
+        private readonly IProductoRepository _productoRepository;
+        //
+
         //Validaciones
         //private readonly IValidator<Venta> _validator;
 
         public DetalleVentaController(
 
-            IDetalleVentaRepository detalleVentaRepository
+            IDetalleVentaRepository detalleVentaRepository,
+
+            IVentaRepository ventaRepository, //Nuevo
+            IProductoRepository productoRepository //Nuevo
 
             //IValidator<Venta> validator
             )
         {
             _detalleVentaRepository = detalleVentaRepository;
 
+            //
+            _ventaRepository = ventaRepository;
+            _productoRepository = productoRepository;
+            //
+
+
             //_validator = validator;
-
-
         }
 
         // GET: DetalleVentaController
@@ -42,8 +56,15 @@ namespace Tienda_Electronica.Controllers
         }
 
         //GET: DetalleVentaController/Create
-        public ActionResult Create()
+        // public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
+            //
+            var ventas = await _ventaRepository.GetAllAsync();
+            var productos = await _productoRepository.GetAllAsync();
+            ViewBag.Ventas = new SelectList(ventas, "ID_Venta", "FechaVenta");
+            ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
+            //
             return View();
         }
 
@@ -62,6 +83,13 @@ namespace Tienda_Electronica.Controllers
             {
                 ViewBag.Error = ex.Message;
 
+                //Nuevo
+                var ventas = await _ventaRepository.GetAllAsync();
+                var productos = await _productoRepository.GetAllAsync();
+                ViewBag.Ventas = new SelectList(ventas, "ID_Venta", "FechaVenta");
+                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
+                //
+
                 return View(detalleVenta);
             }
         }
@@ -73,6 +101,13 @@ namespace Tienda_Electronica.Controllers
 
             if (detalleVenta == null)
                 return NotFound();
+
+            //
+            var ventas = await _ventaRepository.GetAllAsync();
+            var productos = await _productoRepository.GetAllAsync();
+            ViewBag.Ventas = new SelectList(ventas, "ID_Venta", "FechaVenta", detalleVenta.ID_Venta);
+            ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", detalleVenta.ID_Producto);
+            //
 
             return View(detalleVenta);
         }
@@ -92,7 +127,15 @@ namespace Tienda_Electronica.Controllers
             {
                 ViewBag.Error = ex.Message;
 
+                //
+                var ventas = await _ventaRepository.GetAllAsync();
+                var productos = await _productoRepository.GetAllAsync();
+                ViewBag.Ventas = new SelectList(ventas, "ID_Venta", "FechaVenta", detalleVenta.ID_Venta);
+                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", detalleVenta.ID_Producto);
+                //
+
                 return View(detalleVenta);
+
             }
         }
 

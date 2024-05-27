@@ -13,9 +13,12 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ID_DetalleVenta" class="control-label"></label>
-                <input asp-for="ID_DetalleVenta" class="form-control" />
-                <span asp-validation-for="ID_DetalleVenta" class="text-danger"></span>
+                <input asp-for="ID_DetalleVenta" class="form-control" type="hidden" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_Producto" class="control-label"></label>
+                @Html.DropDownList("ID_Producto", (SelectList)ViewBag.Productos, "Seleccione un producto", new { @class = "form-control" })
+                <span asp-validation-for="ID_Producto" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cantidad" class="control-label"></label>
@@ -23,29 +26,19 @@
                 <span asp-validation-for="Cantidad" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="PrecioUnitario" class="control-label"></label>
+                <input asp-for="PrecioUnitario" class="form-control"/>
+                <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="SubTotal" class="control-label"></label>
                 <input asp-for="SubTotal" class="form-control" />
                 <span asp-validation-for="SubTotal" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
+            <div class="form-group">
                 <label asp-for="ID_Venta" class="control-label"></label>
-                <input asp-for="ID_Venta" class="form-control" />
+                @Html.DropDownList("ID_Venta", (SelectList)ViewBag.Ventas, "Seleccione una fecha de venta", new { @class = "form-control" })
                 <span asp-validation-for="ID_Venta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ID_Producto" class="control-label"></label>
-                <input asp-for="ID_Producto" class="form-control" />
-                <span asp-validation-for="ID_Producto" class="text-danger"></span>
-            </div> *@
-            <div class="form-group">
-                <label asp-for="FechaVenta" class="control-label"></label>
-                <input asp-for="FechaVenta" class="form-control" readonly />
-                <span asp-validation-for="FechaVenta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nombre_Producto" class="control-label"></label>
-                <input asp-for="Nombre_Producto" class="form-control" readonly />
-                <span asp-validation-for="Nombre_Producto" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -59,5 +52,10 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+
+

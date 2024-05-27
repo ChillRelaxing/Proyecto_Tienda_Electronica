@@ -36,7 +36,7 @@ namespace Tienda_Electronica.Repositories.DetalleVentas
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spDetalleVenta_Update",
-                detalleVenta
+                new { detalleVenta.ID_DetalleVenta, detalleVenta.Cantidad, detalleVenta.SubTotal, detalleVenta.PrecioUnitario, detalleVenta.ID_Venta, detalleVenta.ID_Producto }
                 );
         }
 
@@ -52,7 +52,8 @@ namespace Tienda_Electronica.Repositories.DetalleVentas
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spDetalleVenta_Insert",
-                new { detalleVenta.Cantidad, detalleVenta.SubTotal, detalleVenta.FechaVenta, detalleVenta.Nombre_Producto });
+                 new { detalleVenta.Cantidad, detalleVenta.SubTotal, detalleVenta.PrecioUnitario, detalleVenta.ID_Venta, detalleVenta.ID_Producto }
+                 );
         }
     }
 }
