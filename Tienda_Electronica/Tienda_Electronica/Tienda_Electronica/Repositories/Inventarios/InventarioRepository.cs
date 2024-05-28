@@ -17,13 +17,13 @@ namespace Tienda_Electronica.Repositories.Inventarios
             return await _dataAccess.GetDataAsync<Inventario, dynamic>(
                 "dbo.spInventario_GetAll",
                 new { }
-            ); 
+            );
         }
 
         public async Task<Inventario?> GetByIdAsync(int id)
         {
             var inventario = await _dataAccess.GetDataAsync<Inventario, dynamic>(
-                "dbo.spInventario_GetById",
+                "dbo.spInventario_GetByID",
                 new { ID_Inventario = id }
                 );
 
@@ -34,8 +34,7 @@ namespace Tienda_Electronica.Repositories.Inventarios
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spInventario_Update",
-                inventario
-                );
+                new { inventario.Cantidad, inventario.FechaRegistro, inventario.ID_Producto });
         }
 
         public async Task DeleteAsync(int id)

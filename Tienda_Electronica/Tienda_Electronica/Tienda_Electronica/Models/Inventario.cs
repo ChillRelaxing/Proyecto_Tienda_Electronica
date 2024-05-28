@@ -10,7 +10,7 @@
 
         public int ID_Producto { get; set;}
 
-        public Producto? Nombre_Producto { get; set; } //Captura datos del modelo Producto para obtener el Nombre_Producto
+        public string? Nombre_Producto { get; set; } //Captura datos del modelo Producto para obtener el Nombre_Producto
 
     }
 }

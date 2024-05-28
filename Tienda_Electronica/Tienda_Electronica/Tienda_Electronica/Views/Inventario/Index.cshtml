@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Tienda_Electronica.Models.Inventario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inventario</h1>
+
+<p>
+    <a asp-action="Create">Nuevo Inventario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Inventario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Producto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_Inventario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Producto)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_Inventario }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_Inventario })
+            </td>
+        </tr>
+} 
+    </tbody>
+</table>
