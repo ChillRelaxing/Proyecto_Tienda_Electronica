@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fMEScuMZEoMR3kU4H4XmbwfO/BimMIhtDWKxxL7dkGooXMIx8P/RQMeFyrD1nOaYWCpU9cp5XUdlMVVxFQ7e5g==",
+  "dgSpecHash": "MoybmvAxLGmvXj1ObbNSaWAlqvll0REQKmJyjl4I/XbXBenqFruV52YDBzzJYyuNaG1+HcWCMzpLFnT0FmCYKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+  "projectFilePath": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MINEDUCYT\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\MINEDUCYT\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

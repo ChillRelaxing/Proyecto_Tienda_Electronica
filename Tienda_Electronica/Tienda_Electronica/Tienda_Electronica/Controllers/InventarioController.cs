@@ -14,7 +14,7 @@ namespace Tienda_Electronica.Controllers
 
 
         private readonly IProductoRepository _productoRepository;
-        
+
 
 
         //Validaciones
@@ -25,7 +25,7 @@ namespace Tienda_Electronica.Controllers
             IInventarioRepository inventarioRepository,
 
             IProductoRepository productoRepository
-           
+
 
             //IValidator<Venta> validator
             )
@@ -34,7 +34,7 @@ namespace Tienda_Electronica.Controllers
 
 
             _productoRepository = productoRepository;
-           
+
 
 
             //_validator = validator;
@@ -84,7 +84,7 @@ namespace Tienda_Electronica.Controllers
 
                 //
                 var productos = await _productoRepository.GetAllAsync();
-                ViewBag.Categorias = new SelectList(productos, "ID_Producto", "Nombre_Producto");
+                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
                 //
 
                 return View(inventario);
@@ -109,7 +109,7 @@ namespace Tienda_Electronica.Controllers
 
         // POST: VentaController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken] 
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Inventario inventario)
         {
             try
@@ -151,7 +151,7 @@ namespace Tienda_Electronica.Controllers
         // POST: VentaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete( Inventario inventario)
+        public async Task<ActionResult> Delete(Inventario inventario)
         {
             try
             {
