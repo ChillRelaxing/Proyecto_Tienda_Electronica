@@ -44,7 +44,6 @@ namespace Tienda_Electronica.Controllers
         {
             
             var cliente = await _clienteRepository.GetAllAsync();
-            ViewBag.Categorias = new SelectList(cliente, "Nombre_Cliente", "Direccion_Cliente", "Telefono_Cliente", "Email_Cliente");
            
             return View();
         }

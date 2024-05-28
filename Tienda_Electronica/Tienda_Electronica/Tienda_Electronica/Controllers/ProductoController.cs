@@ -158,6 +158,7 @@ namespace Tienda_Electronica.Controllers
             }
             catch (Exception ex)
             {
+                ViewBag.Error = ex.Message;
                 return View(producto);
             }
         }

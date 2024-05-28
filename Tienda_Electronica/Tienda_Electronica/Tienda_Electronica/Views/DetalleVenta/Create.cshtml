@@ -17,22 +17,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="ID_Producto" class="control-label"></label>
-                @Html.DropDownList("ID_Producto", (SelectList)ViewBag.Productos, "Seleccione un producto", new { @class = "form-control" })
+                @Html.DropDownList("ID_Producto", (SelectList)ViewBag.Productos, "Seleccione un producto", new { @class = "form-control", onchange = "fetchProductPrice(this.value)" })
                 <span asp-validation-for="ID_Producto" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cantidad" class="control-label"></label>
-                <input asp-for="Cantidad" class="form-control" />
+                <input asp-for="Cantidad" class="form-control" oninput="calculateSubtotal()" />
                 <span asp-validation-for="Cantidad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PrecioUnitario" class="control-label"></label>
-                <input asp-for="PrecioUnitario" class="form-control"/>
+                <input asp-for="PrecioUnitario" class="form-control" readonly="readonly" />
                 <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SubTotal" class="control-label"></label>
-                <input asp-for="SubTotal" class="form-control" />
+                <input asp-for="SubTotal" class="form-control" readonly="readonly" />
                 <span asp-validation-for="SubTotal" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -55,6 +55,37 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script type="text/javascript">
+        function fetchProductPrice(productId) {
+            $.ajax({
+                url: '@Url.Action("GetProductPrice", "DetalleVenta")',
+                data: { id: productId },
+                success: function (data) {
+                    $('input[name="PrecioUnitario"]').val(data);
+                    calculateSubtotal();
+                }
+            });
+        }
+
+        function calculateSubtotal() {
+            var quantity = parseFloat($('input[name="Cantidad"]').val());
+            var unitPrice = parseFloat($('input[name="PrecioUnitario"]').val());
+            if (!isNaN(quantity) && !isNaN(unitPrice)) {
+                var subtotal = quantity * unitPrice;
+                $('input[name="SubTotal"]').val(subtotal.toFixed(2));
+            } else {
+                $('input[name="SubTotal"]').val('');
+            }
+        }
+
+        $(document).ready(function () {
+            // Inicializa el evento onchange para calcular el subtotal cuando se ingrese la cantidad
+            $('input[name="Cantidad"]').on('input', function () {
+                calculateSubtotal();
+            });
+        });
+    </script>
 }
 
 

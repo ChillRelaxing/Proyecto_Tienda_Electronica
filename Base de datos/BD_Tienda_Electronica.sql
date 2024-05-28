@@ -325,7 +325,7 @@ BEGIN
 	WHERE ID_Producto = @ID_Producto
 END;
 
-EXEC dbo.spProducto_Delete 7
+EXEC dbo.spProducto_Delete 8
 
 ----------------------------------
 ----------------------------------

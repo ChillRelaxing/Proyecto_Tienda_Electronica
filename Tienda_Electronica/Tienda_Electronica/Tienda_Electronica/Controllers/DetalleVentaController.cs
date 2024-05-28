@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using Tienda_Electronica.Data;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.DetalleVentas;
@@ -169,6 +170,18 @@ namespace Tienda_Electronica.Controllers
             }
         }
 
+        //NUEVO
+        // Acción para obtener el precio del producto
+        [HttpGet]
+        public async Task<JsonResult> GetProductPrice(int id)
+        {
+            var producto = await _productoRepository.GetByIdAsync(id);
+            if (producto != null)
+            {
+                return Json(producto.PrecioUnitario);
+            }
+            return Json(0);
+        }
 
     }
 }

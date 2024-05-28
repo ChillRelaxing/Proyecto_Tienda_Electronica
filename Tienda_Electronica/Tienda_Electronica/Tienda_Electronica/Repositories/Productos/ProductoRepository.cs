@@ -34,7 +34,7 @@ namespace Tienda_Electronica.Repositories.Productos
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spProducto_Update",
-                new { producto.Nombre_Producto, producto.Descripcion_Producto, producto.ID_Categoria, producto.ID_Producto });
+                new { producto.Nombre_Producto, producto.Descripcion_Producto, producto.PrecioUnitario, producto.ID_Categoria, producto.ID_Producto });
                 //producto
         }
 
@@ -50,7 +50,7 @@ namespace Tienda_Electronica.Repositories.Productos
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spProducto_Insert",
-                new { producto.Nombre_Producto, producto.Descripcion_Producto, producto.ID_Categoria });
+                new { producto.Nombre_Producto, producto.Descripcion_Producto, producto.PrecioUnitario, producto.ID_Categoria });
         }
 
         //FALTA
