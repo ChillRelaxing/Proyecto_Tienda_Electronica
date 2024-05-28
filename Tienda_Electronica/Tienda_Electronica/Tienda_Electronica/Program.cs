@@ -34,6 +34,8 @@ builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
+builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
+
 
 
 
