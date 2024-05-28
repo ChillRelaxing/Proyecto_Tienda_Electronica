@@ -3,40 +3,40 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Categorias;
+using Tienda_Electronica.Repositories.Inventarios;
 using Tienda_Electronica.Repositories.Productos;
-using Tienda_Electronica.Repositories.Ventas;
 
 namespace Tienda_Electronica.Controllers
 {
-    public class ProductoController : Controller 
+    public class InventarioController : Controller
     {
-        private readonly IProductoRepository _productoRepository;
+        private readonly IInventarioRepository _inventarioRepository;
 
-        //-------------------------
-        private readonly ICategoriaRepository _categoriaRepository;
-        //-------------------------
+
+        private readonly IProductoRepository _productoRepository;
+        
 
 
         //Validaciones
         //private readonly IValidator<Venta> _validator;
 
-        public ProductoController(
-            IProductoRepository productoRepository,
+        public InventarioController
+            (
+            IInventarioRepository inventarioRepository,
 
-            //------------
-            ICategoriaRepository categoriaRepository
-            //-------------
+            IProductoRepository productoRepository
+           
 
             //IValidator<Venta> validator
             )
         {
+            _inventarioRepository = inventarioRepository;
+
+
             _productoRepository = productoRepository;
+           
 
-            //--------------
-            _categoriaRepository = categoriaRepository;
-            //--------------
 
-       
             //_validator = validator;
         }
 
@@ -44,9 +44,9 @@ namespace Tienda_Electronica.Controllers
         // GET: VentaController
         public async Task<ActionResult> Index()
         {
-            var producto = await _productoRepository.GetAllAsync();
+            var inventario = await _inventarioRepository.GetAllAsync();
 
-            return View(producto);
+            return View(inventario);
         }
 
         // GET: VentaController/Details/5
@@ -61,8 +61,8 @@ namespace Tienda_Electronica.Controllers
         public async Task<ActionResult> Create()
         {
             //-------------------
-            var categorias = await _categoriaRepository.GetAllAsync();
-            ViewBag.Categorias = new SelectList(categorias, "ID_Categoria", "Nombre_Categoria");
+            var productos = await _productoRepository.GetAllAsync();
+            ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
             //---------------------------
             return View();
         }
@@ -70,11 +70,11 @@ namespace Tienda_Electronica.Controllers
         // POST: VentaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Producto producto)
+        public async Task<ActionResult> Create(Inventario inventario)
         {
             try
             {
-                await _productoRepository.AddAsync(producto);
+                await _inventarioRepository.AddAsync(inventario);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -83,38 +83,38 @@ namespace Tienda_Electronica.Controllers
                 ViewBag.Error = ex.Message;
 
                 //
-                var categorias = await _categoriaRepository.GetAllAsync();
-                ViewBag.Categorias = new SelectList(categorias, "ID_Categoria", "Nombre_Categoria");
+                var productos = await _productoRepository.GetAllAsync();
+                ViewBag.Categorias = new SelectList(productos, "ID_Producto", "Nombre_Producto");
                 //
 
-                return View(producto);
+                return View(inventario);
             }
         }
-        
+
         // GET: VentaController/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            var producto = await _productoRepository.GetByIdAsync(id);
+            var inventario = await _inventarioRepository.GetByIdAsync(id);
 
-            if (producto == null)
+            if (inventario == null)
                 return NotFound();
 
             //
-            var categorias = await _categoriaRepository.GetAllAsync();
-            ViewBag.Categorias = new SelectList(categorias, "ID_Categoria", "Nombre_Categoria", producto.ID_Categoria);
+            var productos = await _productoRepository.GetAllAsync();
+            ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", inventario.ID_Producto);
             //
 
-            return View(producto);
+            return View(inventario);
         }
 
         // POST: VentaController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(Producto producto)
+        [ValidateAntiForgeryToken] 
+        public async Task<ActionResult> Edit(Inventario inventario)
         {
             try
             {
-                await _productoRepository.EditAsync(producto);
+                await _inventarioRepository.EditAsync(inventario);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -123,43 +123,45 @@ namespace Tienda_Electronica.Controllers
                 ViewBag.Error = ex.Message;
 
                 //
-                var categorias = await _categoriaRepository.GetAllAsync();
-                ViewBag.Categorias = new SelectList(categorias, "ID_Categoria", "Nombre_Categoria", producto.ID_Categoria);
+                var productos = await _productoRepository.GetAllAsync();
+                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", inventario.ID_Producto);
                 //
 
-                return View(producto);
+                return View(inventario);
             }
         }
+
+
+
 
         // GET: VentaController/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            var producto = await _productoRepository.GetByIdAsync(id);
+            var inventario = await _inventarioRepository.GetByIdAsync(id);
 
-            if (producto == null)
+            if (inventario == null)
             {
                 return NotFound();
             }
 
-            return View(producto);
+            return View(inventario);
 
         }
 
         // POST: VentaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete(Producto producto)
+        public async Task<ActionResult> Delete( Inventario inventario)
         {
             try
             {
-                await _productoRepository.DeleteAsync(producto.ID_Producto);
+                await _inventarioRepository.DeleteAsync(inventario.ID_Producto);
 
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                ViewBag.Error = ex.Message;
-                return View(producto);
+                return View(inventario);
             }
         }
     }
