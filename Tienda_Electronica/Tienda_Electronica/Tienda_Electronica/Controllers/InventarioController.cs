@@ -155,7 +155,7 @@ namespace Tienda_Electronica.Controllers
         {
             try
             {
-                await _inventarioRepository.DeleteAsync(inventario.ID_Producto);
+                await _inventarioRepository.DeleteAsync(inventario.ID_Inventario);
 
                 return RedirectToAction(nameof(Index));
             }

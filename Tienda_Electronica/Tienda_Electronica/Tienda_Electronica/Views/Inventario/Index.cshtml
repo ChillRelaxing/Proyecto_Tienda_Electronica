@@ -7,10 +7,10 @@
 <h1>Inventario</h1>
 
 <p>
-    <a asp-action="Create">Nuevo Inventario</a>
+    <a class="btn btn-primary" asp-action="Create">Nuevo Inventario</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.ID_Inventario)
@@ -42,10 +42,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre_Producto)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID_Inventario }) 
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID_Inventario })
-            </td>
+             <td>
+                    <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID_Inventario })">Editar</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID_Inventario })">Eliminar</a>
+                </td>
         </tr>
 } 
     </tbody>

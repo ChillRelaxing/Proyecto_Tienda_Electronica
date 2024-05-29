@@ -26,24 +26,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="ID_Producto" class="control-label"></label>
-                @Html.DropDownList("Nombre_Producto", (SelectList)ViewBag.Productos, "Seleccione un Nombre_Producto", new { @class = "form-control" })
+                @Html.DropDownList("ID_Producto", (SelectList)ViewBag.Productos, "Seleccione un Nombre_Producto", new { @class = "form-control" })
                 <span asp-validation-for="ID_Producto" class="text-danger"></span>
-            </div>
-           @*  <div class="form-group">
-                <label asp-for="Nombre_Categoria" class="control-label"></label>
-                <input asp-for="Nombre_Categoria" class="form-control" />
-                <span asp-validation-for="Nombre_Categoria" class="text-danger"></span>
-            </div> *@
-
+            </div>     
+            <hr />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
-
+<hr />
 <div>
-    <a asp-action="Index">Regresar al Listado</a>
+    <a asp-action="Index" class="btn btn-primary">Regresar al Listado</a>
 </div>
 
 @section Scripts {

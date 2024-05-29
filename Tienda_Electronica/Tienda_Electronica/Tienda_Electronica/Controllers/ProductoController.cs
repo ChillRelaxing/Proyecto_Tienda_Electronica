@@ -18,7 +18,7 @@ namespace Tienda_Electronica.Controllers
 
 
         //Validaciones
-        //private readonly IValidator<Venta> _validator;
+        //private readonly IValidator<Venta> _validator;   
 
         public ProductoController(
             IProductoRepository productoRepository,

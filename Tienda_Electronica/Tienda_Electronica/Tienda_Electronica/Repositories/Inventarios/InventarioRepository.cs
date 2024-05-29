@@ -34,7 +34,7 @@ namespace Tienda_Electronica.Repositories.Inventarios
         {
             await _dataAccess.SaveDataAsync(
                 "dbo.spInventario_Update",
-                new { inventario.Cantidad, inventario.FechaRegistro, inventario.ID_Producto });
+                new { inventario.Cantidad, inventario.FechaRegistro, inventario.ID_Inventario, inventario.ID_Producto });
         }
 
         public async Task DeleteAsync(int id)
