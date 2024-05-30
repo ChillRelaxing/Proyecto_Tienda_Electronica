@@ -96,14 +96,14 @@ SELECT * FROM Venta
 
 ----------------------------------
 
-ALTER PROCEDURE dbo.spVenta_Delete
+CREATE PROCEDURE dbo.spVenta_Delete
 (@ID_Venta int)
 AS
 BEGIN
     DELETE FROM Venta WHERE ID_Venta = @ID_Venta
 END;
 
-EXEC dbo.spVenta_Delete 4
+EXEC dbo.spVenta_Delete 3
 
 ----------------------------------
 ----------------------------------
@@ -487,7 +487,7 @@ BEGIN
 	DELETE FROM Cliente WHERE ID_Cliente = @ID_Cliente
 END;
 
-EXEC dbo.spCliente_Delete 5
+EXEC dbo.spCliente_Delete 3
 
 ----------------------------------
 ----------------------------------

@@ -9,6 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -40,7 +41,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaVenta)
                 </td>
-                <td>
+                <td class="venta-total">
                     @Html.DisplayFor(modelItem => item.Total_Venta)
                 </td>
                 <td>
