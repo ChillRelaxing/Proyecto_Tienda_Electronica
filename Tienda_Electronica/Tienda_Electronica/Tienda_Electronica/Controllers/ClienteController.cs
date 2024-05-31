@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Categorias;
 using Tienda_Electronica.Repositories.Clientes;
+using Tienda_Electronica.Services.Email;
 
 namespace Tienda_Electronica.Controllers
 {
@@ -15,13 +16,25 @@ namespace Tienda_Electronica.Controllers
         //Validaciones
         //private readonly IValidator<Venta> _validator;
 
+        //Nuevo
+        private readonly IEmailService _emailService;
+
+
         public ClienteController(
-            IClienteRepository clienteRepository
+            IClienteRepository clienteRepository,
+
+            //nuevo
+            IEmailService emailService
 
             //IValidator<Venta> validator
             )
         {
             _clienteRepository = clienteRepository;
+
+
+            //nuevo
+            _emailService = emailService;
+
             //
             //_validator = validator;
         }
@@ -58,6 +71,16 @@ namespace Tienda_Electronica.Controllers
             try
             {
                 await _clienteRepository.AddAsync(cliente);
+
+                //nuevo
+                // "Ramiro@gmail.com";
+                string email = cliente.Email_Cliente;
+                string subject = "Bienvenido";
+                string body = "Bievenido a la tienda" + cliente.Nombre_Cliente;
+
+                _emailService.SendEmail(email, cliente.Nombre_Cliente, subject, body);
+
+                //
 
                 return RedirectToAction(nameof(Index));
             }

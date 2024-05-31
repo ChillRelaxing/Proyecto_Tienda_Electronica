@@ -8,6 +8,7 @@ using Tienda_Electronica.Repositories.DetalleVentas;
 using Tienda_Electronica.Repositories.Inventarios;
 using Tienda_Electronica.Repositories.Productos;
 using Tienda_Electronica.Repositories.Ventas;
+using Tienda_Electronica.Services.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,9 @@ builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
+
+//Inyeccion de dependencias de Email
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 
 //NUEVO

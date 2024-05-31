@@ -553,3 +553,6 @@ C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda
 C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\obj\Debug\net8.0\Tienda_Electronica.genruntimeconfig.cache
 C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\obj\Debug\net8.0\ref\Tienda_Electronica.dll
 C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MiniExcel.dll
+C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MailKit.dll
+C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MimeKit.dll
