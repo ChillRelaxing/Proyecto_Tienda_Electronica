@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using Tienda_Electronica.Repositories.Ventas;
 
 namespace Tienda_Electronica.Controllers
 {
+    [Authorize]
     public class VentaController : Controller
     {
         private readonly IVentaRepository _ventaRepository;

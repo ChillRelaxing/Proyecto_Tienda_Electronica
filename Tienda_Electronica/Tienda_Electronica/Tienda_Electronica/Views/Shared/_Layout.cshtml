@@ -13,50 +13,29 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Tienda_Electronica</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
-
-
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Venta" asp-action="Index">Ventas</a>
-                        </li>
-
-
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DetalleVenta" asp-action="Index">Detalle ventas</a>
-                        </li>
-
-
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Index">Productos</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Inventario" asp-action="Index">Inventarios</a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categoria" asp-action="Index">Categorias</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cliente" asp-action="Index">Clientes</a>
-                        </li>
-
-
-                    </ul>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="navbarNavDropdown">
+                    @if (User.Identity.IsAuthenticated && !Context.Request.Path.Value.ToLower().Contains("/account/login"))
+                    {
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="mainMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Menú
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="mainMenuDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Venta" asp-action="Index">Ventas</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="DetalleVenta" asp-action="Index">Detalle ventas</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Producto" asp-action="Index">Productos</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Inventario" asp-action="Index">Inventarios</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Categoria" asp-action="Index">Categorias</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Cliente" asp-action="Index">Clientes</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
                     <partial name="_LoginPartial" />
                 </div>
             </div>

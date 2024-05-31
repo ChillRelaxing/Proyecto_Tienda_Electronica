@@ -8,9 +8,17 @@ namespace Tienda_Electronica.Data
     {
         private readonly IConfiguration _configuration;
 
+        //NUEVO PRUEBAS
+        private readonly string _connectionString;
+        //
+
         public SqlDataAccess(IConfiguration configuration)
         {
             _configuration = configuration;
+
+            //NUEVO
+            _connectionString = _configuration.GetConnectionString("DefaultConnection");
+            //
         }
 
         public async Task<IEnumerable<T>> GetDataAsync<T, P>(
@@ -39,8 +47,12 @@ namespace Tienda_Electronica.Data
                 commandType: CommandType.StoredProcedure);
         }
 
-        //Prueba
        
+        //NUEVO
+        public IDbConnection GetConnection() => new SqlConnection(_connectionString);
+        //
+
+
 
     }
 }

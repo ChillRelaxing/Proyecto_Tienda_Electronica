@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -10,6 +11,7 @@ using Tienda_Electronica.Repositories.Ventas;
 
 namespace Tienda_Electronica.Controllers
 {
+    [Authorize]
     public class DetalleVentaController : Controller
     {
         private readonly IDetalleVentaRepository _detalleVentaRepository;

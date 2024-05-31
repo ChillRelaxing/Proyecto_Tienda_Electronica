@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Dapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MiniExcelLibs;
+using Tienda_Electronica.Data;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Categorias;
 using Tienda_Electronica.Repositories.Productos;
@@ -8,8 +12,13 @@ using Tienda_Electronica.Repositories.Ventas;
 
 namespace Tienda_Electronica.Controllers
 {
+    [Authorize]
     public class ProductoController : Controller 
     {
+        //NUEVO---
+        private readonly ISqlDataAccess _dataAccess;
+        //
+
         private readonly IProductoRepository _productoRepository;
 
         //-------------------------
@@ -24,8 +33,13 @@ namespace Tienda_Electronica.Controllers
             IProductoRepository productoRepository,
 
             //------------
-            ICategoriaRepository categoriaRepository
+            ICategoriaRepository categoriaRepository,
             //-------------
+
+            //NUEVO ------
+            ISqlDataAccess dataAccess
+            //
+
 
             //IValidator<Venta> validator
             )
@@ -36,7 +50,10 @@ namespace Tienda_Electronica.Controllers
             _categoriaRepository = categoriaRepository;
             //--------------
 
-       
+            //Nuevo----
+            _dataAccess = dataAccess;
+            //
+
             //_validator = validator;
         }
 
@@ -162,5 +179,59 @@ namespace Tienda_Electronica.Controllers
                 return View(producto);
             }
         }
+
+        //NUEVO
+        // GET: ProductoController/ImportData
+        [HttpGet]
+        public IActionResult ImportData()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ImportData(IFormFile file)
+        {
+            var directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+
+            if (!Directory.Exists(directoryPath))
+                Directory.CreateDirectory(directoryPath);
+
+            if (file != null && file.Length > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(directoryPath, fileName);
+
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+
+                using (var connection = _dataAccess.GetConnection())
+                {
+                    using (var stream = System.IO.File.OpenRead(path))
+                    {
+                        var rows = stream.Query<Producto>();
+
+                        string query = @"INSERT INTO Producto 
+                                         VALUES(
+                                            @Nombre_Producto,
+                                            @Descripcion_Producto,
+                                            @PrecioUnitario,
+                                            @ID_Categoria)";
+
+                        foreach (var row in rows)
+                            connection.Execute(query, new
+                            {
+                                row.Nombre_Producto,
+                                row.Descripcion_Producto,
+                                row.PrecioUnitario,
+                                row.ID_Categoria
+                            });
+                    }
+                }
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

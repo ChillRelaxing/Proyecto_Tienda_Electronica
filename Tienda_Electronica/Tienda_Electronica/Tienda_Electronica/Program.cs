@@ -37,11 +37,22 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
 
 
+//NUEVO
+// Configuración de cookies de autenticación
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Identity/Account/Login";
+    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+});
+//NUEVO
+// Configuración de Razor Pages para definir la página predeterminada
+builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AddPageRoute("/Identity/Account/Login", "");
+});
+//
+//
 
-
-
-
-//Validaciones 
 
 var app = builder.Build();
 
@@ -61,6 +72,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+//NUEVO
+app.UseAuthentication(); // Asegúra que la autenticación está habilitada
+//
 
 app.UseAuthorization();
 

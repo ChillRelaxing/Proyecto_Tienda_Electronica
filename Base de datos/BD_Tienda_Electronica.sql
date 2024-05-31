@@ -671,3 +671,102 @@ VALUES (50, GETDATE(), 1),
        (150, GETDATE(), 4),
        (500, GETDATE(), 5),
        (300, GETDATE(), 6);
+
+
+
+
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+--SP ACTUALIZADOS
+
+CREATE PROCEDURE dbo.spActualizarTotalVenta
+(
+    @ID_Venta INT
+)
+AS
+BEGIN
+    DECLARE @Total_Venta DECIMAL(10, 2);
+
+    SELECT @Total_Venta = SUM(SubTotal)
+    FROM DetalleVenta
+    WHERE ID_Venta = @ID_Venta;
+
+    UPDATE Venta
+    SET Total_Venta = @Total_Venta
+    WHERE ID_Venta = @ID_Venta;
+END;
+
+---------------------------------------------
+---------------------------------------------
+
+ALTER PROCEDURE dbo.spDetalleVenta_Insert
+(
+    @Cantidad INT,
+    @SubTotal DECIMAL(18, 2),
+    @PrecioUnitario MONEY,
+    @ID_Venta INT,
+    @ID_Producto INT
+)
+AS
+BEGIN
+    INSERT INTO DetalleVenta (Cantidad, SubTotal, PrecioUnitario, ID_Venta, ID_Producto)
+    VALUES (@Cantidad, @SubTotal, @PrecioUnitario, @ID_Venta, @ID_Producto);
+
+    -- Actualizar el Total_Venta
+    EXEC dbo.spActualizarTotalVenta @ID_Venta;
+END;
+
+---------------------------------------------
+---------------------------------------------
+
+
+ALTER PROCEDURE dbo.spDetalleVenta_Update
+(
+    @ID_DetalleVenta INT,
+    @Cantidad INT,
+    @SubTotal DECIMAL(18, 2),
+    @PrecioUnitario MONEY,
+    @ID_Venta INT,
+    @ID_Producto INT
+)
+AS
+BEGIN
+    UPDATE DetalleVenta
+    SET Cantidad = @Cantidad,
+        SubTotal = @SubTotal,
+        PrecioUnitario = @PrecioUnitario,
+        ID_Venta = @ID_Venta,
+        ID_Producto = @ID_Producto
+    WHERE ID_DetalleVenta = @ID_DetalleVenta;
+
+    -- Actualizar el Total_Venta
+    EXEC dbo.spActualizarTotalVenta @ID_Venta;
+END;
+
+---------------------------------------------
+---------------------------------------------
+
+ALTER PROCEDURE dbo.spDetalleVenta_Delete
+(
+    @ID_DetalleVenta INT
+)
+AS
+BEGIN
+    DECLARE @ID_Venta INT;
+
+    SELECT @ID_Venta = ID_Venta
+    FROM DetalleVenta
+    WHERE ID_DetalleVenta = @ID_DetalleVenta;
+
+    DELETE FROM DetalleVenta
+    WHERE ID_DetalleVenta = @ID_DetalleVenta;
+
+    -- Actualizar el Total_Venta
+    EXEC dbo.spActualizarTotalVenta @ID_Venta;
+END;

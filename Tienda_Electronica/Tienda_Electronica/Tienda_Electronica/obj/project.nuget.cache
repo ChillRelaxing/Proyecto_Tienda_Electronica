@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cdzTHCVKDBWfpureiF3hkXU1RUF9KsvaO61ds5vIXReteWXPbFYOJPp4q+jz0+fNXRS9/miqAGtOEHNiJyjgyA==",
+  "dgSpecHash": "VgUhRm9nNEQ6LYmbr0aWu/CaPxe4PCqRxJDMwca9xl7iVQezrQSEK+ik40jEOrNeABws0ibAn2xRu12CcCbrGg==",
   "success": true,
   "projectFilePath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
   "expectedPackageFiles": [
@@ -132,6 +132,7 @@
     "C:\\Users\\L e  o\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\8.0.2\\microsoft.visualstudio.web.codegeneration.templating.8.0.2.nupkg.sha512",
     "C:\\Users\\L e  o\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\8.0.2\\microsoft.visualstudio.web.codegeneration.utils.8.0.2.nupkg.sha512",
     "C:\\Users\\L e  o\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\8.0.2\\microsoft.visualstudio.web.codegenerators.mvc.8.0.2.nupkg.sha512",
+    "C:\\Users\\L e  o\\.nuget\\packages\\miniexcel\\1.32.1\\miniexcel.1.32.1.nupkg.sha512",
     "C:\\Users\\L e  o\\.nuget\\packages\\mono.texttemplating\\2.3.1\\mono.texttemplating.2.3.1.nupkg.sha512",
     "C:\\Users\\L e  o\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\L e  o\\.nuget\\packages\\nuget.common\\6.9.1\\nuget.common.6.9.1.nupkg.sha512",

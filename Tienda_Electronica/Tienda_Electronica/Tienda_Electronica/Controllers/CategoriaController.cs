@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Categorias;
@@ -6,6 +7,7 @@ using Tienda_Electronica.Repositories.Ventas;
 
 namespace Tienda_Electronica.Controllers
 {
+    [Authorize]
     public class CategoriaController : Controller
     {
         private readonly ICategoriaRepository _categoriaRepository;

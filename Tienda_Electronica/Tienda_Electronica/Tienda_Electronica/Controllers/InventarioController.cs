@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Tienda_Electronica.Models;
@@ -8,6 +9,7 @@ using Tienda_Electronica.Repositories.Productos;
 
 namespace Tienda_Electronica.Controllers
 {
+    [Authorize]
     public class InventarioController : Controller
     {
         private readonly IInventarioRepository _inventarioRepository;

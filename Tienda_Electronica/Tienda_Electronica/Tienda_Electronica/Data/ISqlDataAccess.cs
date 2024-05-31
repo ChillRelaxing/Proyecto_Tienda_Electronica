@@ -1,4 +1,6 @@
 ﻿
+using System.Data;
+
 namespace Tienda_Electronica.Data
 {
     public interface ISqlDataAccess
@@ -7,9 +9,8 @@ namespace Tienda_Electronica.Data
 
         Task SaveDataAsync<T>(string storedProcedure, T parameters, string connection = "DefaultConnection");
 
-        //Pruebas
-       
-
+        //NUEVO 
+        IDbConnection GetConnection();
 
     }
 }

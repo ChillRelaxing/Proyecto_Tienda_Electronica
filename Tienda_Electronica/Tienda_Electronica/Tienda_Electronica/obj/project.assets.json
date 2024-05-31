@@ -2240,6 +2240,15 @@
           }
         }
       },
+      "MiniExcel/1.32.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MiniExcel.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MiniExcel.dll": {}
+        }
+      },
       "Mono.TextTemplating/2.3.1": {
         "type": "package",
         "dependencies": {
@@ -6969,6 +6978,21 @@
         "microsoft.visualstudio.web.codegenerators.mvc.nuspec"
       ]
     },
+    "MiniExcel/1.32.1": {
+      "sha512": "givinRByTg0nQAktcFSaLmIt9Ki+LwYjlwtSYXuwQdoyAy8Z3RfBnKR/UA/79mWmb8wKJgPlnZf87pvOBpdZ/g==",
+      "type": "package",
+      "path": "miniexcel/1.32.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net45/MiniExcel.dll",
+        "lib/net6.0/MiniExcel.dll",
+        "lib/netstandard2.0/MiniExcel.dll",
+        "miniexcel.1.32.1.nupkg.sha512",
+        "miniexcel.nuspec"
+      ]
+    },
     "Mono.TextTemplating/2.3.1": {
       "sha512": "pqYwzNqDL0QK1JFpAjpI/NPqyqLGpHLvVmA5Ec0LaSnbIDtEXxu0td16uunegb7c8xAnlcm4qkbIYUP5FfrFpA==",
       "type": "package",
@@ -8416,7 +8440,8 @@
       "Microsoft.Data.SqlClient >= 5.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.1",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2",
+      "MiniExcel >= 1.32.1"
     ]
   },
   "packageFolders": {
@@ -8497,6 +8522,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "MiniExcel": {
+            "target": "Package",
+            "version": "[1.32.1, )"
           }
         },
         "imports": [
