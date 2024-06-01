@@ -4,33 +4,29 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Detalle de Venta</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr style="background-color:royalblue">
             <th>
-                @Html.DisplayNameFor(model => model.ID_DetalleVenta)
+                ID Detalle Venta
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre_Producto)
+                Nombre Producto
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cantidad)
+                Cantidad
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PrecioUnitario)
+                Precio Unitario
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SubTotal)
+                Subtotal
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaVenta)
+                Fecha de Venta
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -55,13 +51,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaVenta)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_DetalleVenta })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_DetalleVenta })
-                </td>
             </tr>
         }
     </tbody>
 </table>
-
-

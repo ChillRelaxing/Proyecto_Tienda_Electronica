@@ -5,7 +5,7 @@
 }
 
 <h1>Eliminar Inventario</h1>
-
+<h3>¿Quieres eliminar este inventario?</h3>
 
 <div>
     
@@ -41,6 +41,6 @@
     <form asp-action="Delete">
         <input type="submit" value="Delete" class="btn btn-danger" />
         <input type="hidden" asp-for="ID_Inventario" class="form-control"/>
-        <a asp-action="Index" class="btn btn-primary">Regresar al listado</a>
+        <a asp-action="Index" class="btn btn-secondary">Regresar al listado</a>
     </form>
 </div>

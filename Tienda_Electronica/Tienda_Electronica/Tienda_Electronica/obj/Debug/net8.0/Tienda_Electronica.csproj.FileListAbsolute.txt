@@ -556,3 +556,7 @@ C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_
 C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MailKit.dll
 C:\Users\L e  o\Downloads\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MimeKit.dll
+C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MailKit.dll
+C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MimeKit.dll
+C:\Users\MINEDUCYT\Desktop\Proyecto_Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\Tienda_Electronica\bin\Debug\net8.0\MiniExcel.dll

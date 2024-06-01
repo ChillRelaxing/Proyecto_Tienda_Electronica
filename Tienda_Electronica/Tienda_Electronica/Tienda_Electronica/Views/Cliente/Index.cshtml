@@ -7,7 +7,7 @@
 <h1>Clientes</h1>
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Nuevo Cliente</a>
+    <a class="btn btn-primary" asp-action="Create">Agregar Cliente</a>
 </p>
 <table class="table table-striped table-bordered">
     <thead class="thead-dark">
@@ -50,8 +50,11 @@
                     @Html.DisplayFor(modelItem => item.Email_Cliente)
                 </td>
                 <td>
-                    <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID_Cliente })">Editar</a>
-                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID_Cliente })">Eliminar</a>
+                    <center>
+
+                        <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID_Cliente })">Editar</a>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID_Cliente })">Eliminar</a>
+                    </center>
                 </td>
             </tr>
         }

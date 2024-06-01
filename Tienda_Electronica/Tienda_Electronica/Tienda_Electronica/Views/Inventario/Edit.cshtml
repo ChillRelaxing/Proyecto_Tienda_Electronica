@@ -30,14 +30,14 @@
                 @Html.DropDownList("ID_Producto", (SelectList)ViewBag.Productos, "Seleccione un producto", new { @class = "form-control" })
                 <span asp-validation-for="ID_Producto" class="text-danger"></span>
             </div>
-            <hr />
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
-<hr />
+<br />
 <div>
     <a asp-action="Index" class="btn btn-primary">Regrear al Listado</a>
 </div>
