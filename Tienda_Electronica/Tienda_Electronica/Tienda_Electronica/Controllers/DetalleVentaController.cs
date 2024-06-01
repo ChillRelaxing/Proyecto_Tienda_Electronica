@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +10,7 @@ using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.DetalleVentas;
 using Tienda_Electronica.Repositories.Productos;
 using Tienda_Electronica.Repositories.Ventas;
+using Tienda_Electronica.Validations;
 
 namespace Tienda_Electronica.Controllers
 {
@@ -22,14 +25,18 @@ namespace Tienda_Electronica.Controllers
         //
 
         //Validaciones
-        //private readonly IValidator<Venta> _validator;
+        private readonly IValidator<DetalleVenta> _detalleventaValidator;
 
         public DetalleVentaController(
 
             IDetalleVentaRepository detalleVentaRepository,
 
             IVentaRepository ventaRepository, //Nuevo
-            IProductoRepository productoRepository //Nuevo
+            IProductoRepository productoRepository, //Nuevo
+
+            //Nuevo validaciones
+            IValidator<DetalleVenta> detalleventaValidator
+            //
 
             //IValidator<Venta> validator
             )
@@ -41,8 +48,8 @@ namespace Tienda_Electronica.Controllers
             _productoRepository = productoRepository;
             //
 
-
-            //_validator = validator;
+            //Validaciones
+            _detalleventaValidator = detalleventaValidator;
         }
 
         // GET: DetalleVentaController
@@ -76,6 +83,9 @@ namespace Tienda_Electronica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(DetalleVenta detalleVenta)
         {
+            //Validaciones
+            ValidationResult validationResult = _detalleventaValidator.Validate(detalleVenta);
+
             try
             {
                 await _detalleVentaRepository.AddAsync(detalleVenta);
@@ -92,6 +102,9 @@ namespace Tienda_Electronica.Controllers
                 ViewBag.Ventas = new SelectList(ventas, "ID_Venta", "FechaVenta");
                 ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
                 //
+
+                //Validaciones
+                validationResult.AddToModelState(this.ModelState);
 
                 return View(detalleVenta);
             }
@@ -120,6 +133,9 @@ namespace Tienda_Electronica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(DetalleVenta detalleVenta)
         {
+            //Validacion
+            var validationResult = _detalleventaValidator.Validate(detalleVenta);
+
             try
             {
                 await _detalleVentaRepository.EditAsync(detalleVenta);
@@ -136,6 +152,9 @@ namespace Tienda_Electronica.Controllers
                 ViewBag.Ventas = new SelectList(ventas, "ID_Venta", "FechaVenta", detalleVenta.ID_Venta);
                 ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", detalleVenta.ID_Producto);
                 //
+
+                //Validaciones
+                validationResult.AddToModelState(this.ModelState);
 
                 return View(detalleVenta);
 

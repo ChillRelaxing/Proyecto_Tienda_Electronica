@@ -1,5 +1,7 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using Tienda_Electronica.Data;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Categorias;
@@ -9,6 +11,7 @@ using Tienda_Electronica.Repositories.Inventarios;
 using Tienda_Electronica.Repositories.Productos;
 using Tienda_Electronica.Repositories.Ventas;
 using Tienda_Electronica.Services.Email;
+using Tienda_Electronica.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +43,11 @@ builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
 //Inyeccion de dependencias de Email
 builder.Services.AddTransient<IEmailService, EmailService>();
 
+//Inyecion de dependencias de validaciones
+builder.Services.AddScoped<IValidator<DetalleVenta>, DetalleVentaValidator>();
+
+//Validaciones en español
+ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("es");
 
 //NUEVO
 // Configuración de cookies de autenticación
