@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj": {}
+    "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj": {
+    "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+        "projectUniqueName": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
         "projectName": "Tienda_Electronica",
-        "projectPath": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
-        "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\obj\\",
+        "projectPath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+        "packagesPath": "C:\\Users\\L e  o\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\L e  o\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,11 +62,11 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
@@ -74,11 +74,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

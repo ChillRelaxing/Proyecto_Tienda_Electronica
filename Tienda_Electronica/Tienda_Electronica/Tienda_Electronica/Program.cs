@@ -46,18 +46,18 @@ builder.Services.AddTransient<IEmailService, EmailService>();
 //Inyecion de dependencias de validaciones
 builder.Services.AddScoped<IValidator<DetalleVenta>, DetalleVentaValidator>();
 
-//Validaciones en español
+//Validaciones en espaï¿½ol
 ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("es");
 
 //NUEVO
-// Configuración de cookies de autenticación
+// Configuraciï¿½n de cookies de autenticaciï¿½n
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Identity/Account/Login";
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
 //NUEVO
-// Configuración de Razor Pages para definir la página predeterminada
+// Configuraciï¿½n de Razor Pages para definir la pï¿½gina predeterminada
 builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
 {
     options.Conventions.AddPageRoute("/Identity/Account/Login", "");
@@ -86,7 +86,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 //NUEVO
-app.UseAuthentication(); // Asegúra que la autenticación está habilitada
+app.UseAuthentication(); // Asegï¿½ra que la autenticaciï¿½n estï¿½ habilitada
 //
 
 app.UseAuthorization();

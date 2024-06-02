@@ -43,15 +43,16 @@
                 @Html.DropDownList("ID_Venta", (SelectList)ViewBag.Ventas, "Seleccione una fecha de venta", new { @class = "form-control" })
                 <span asp-validation-for="ID_Venta" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
-
+<br />
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-primary">Regresar al listado</a>
 </div>
 
 @section Scripts {
