@@ -5,6 +5,8 @@ using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Clientes;
 using Tienda_Electronica.Services.Email;
 using System.Threading.Tasks;
+using FluentValidation;
+using Tienda_Electronica.Validations;
 
 namespace Tienda_Electronica.Controllers
 {
@@ -14,6 +16,7 @@ namespace Tienda_Electronica.Controllers
         private readonly IClienteRepository _clienteRepository;
         private readonly IEmailService _emailService;
 
+        private readonly IValidator<Cliente> _clienteValidator;
         public ClienteController(IClienteRepository clienteRepository, IEmailService emailService)
         {
             _clienteRepository = clienteRepository;
@@ -92,19 +95,20 @@ namespace Tienda_Electronica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Cliente cliente)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(cliente);
-            }
+            var validationResult = _clienteValidator.Validate(cliente);
 
             try
             {
                 await _clienteRepository.EditAsync(cliente);
+
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
+
+                validationResult.AddToModelState(this.ModelState);
+
                 return View(cliente);
             }
         }

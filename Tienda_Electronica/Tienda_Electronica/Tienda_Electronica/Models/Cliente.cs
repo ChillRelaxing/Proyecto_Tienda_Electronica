@@ -35,7 +35,6 @@ namespace Tienda_Electronica.Models
 
         [Required(ErrorMessage = "El correo del cliente es obligatorio")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "El correo del cliente debe tener entre 3 y 100 caracteres")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "El correo del cliente solo debe contener letras y espacios")]
         [Display(Name = "Correo del Cliente")]
         public string Email_Cliente { get; set; }
 

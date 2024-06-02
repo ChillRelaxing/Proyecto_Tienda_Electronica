@@ -23,8 +23,8 @@ namespace Tienda_Electronica.Controllers
         // GET: InventarioController
         public async Task<ActionResult> Index()
         {
-            var inventarios = await _inventarioRepository.GetAllAsync();
-            return View(inventarios);
+            var inventario = await _inventarioRepository.GetAllAsync();
+            return View(inventario);
         }
 
         // GET: InventarioController/Details/5
@@ -51,23 +51,18 @@ namespace Tienda_Electronica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Inventario inventario)
         {
-            if (!ModelState.IsValid)
-            {
-                var productos = await _productoRepository.GetAllAsync();
-                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
-                return View(inventario);
-            }
 
             try
             {
                 await _inventarioRepository.AddAsync(inventario);
+
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                var productos = await _productoRepository.GetAllAsync();
-                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto");
+
+
                 return View(inventario);
             }
         }
@@ -76,28 +71,20 @@ namespace Tienda_Electronica.Controllers
         public async Task<ActionResult> Edit(int id)
         {
             var inventario = await _inventarioRepository.GetByIdAsync(id);
+
             if (inventario == null)
-            {
                 return NotFound();
-            }
 
             var productos = await _productoRepository.GetAllAsync();
-            ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", inventario.ID_Producto);
+            ViewBag.Productos = new SelectList(productos,"ID_Producto", "Nombre_Producto", inventario.ID_Producto);
+
             return View(inventario);
         }
-
         // POST: InventarioController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Inventario inventario)
         {
-            if (!ModelState.IsValid)
-            {
-                var productos = await _productoRepository.GetAllAsync();
-                ViewBag.Productos = new SelectList(productos, "ID_Producto", "Nombre_Producto", inventario.ID_Producto);
-                return View(inventario);
-            }
-
             try
             {
                 await _inventarioRepository.EditAsync(inventario);
