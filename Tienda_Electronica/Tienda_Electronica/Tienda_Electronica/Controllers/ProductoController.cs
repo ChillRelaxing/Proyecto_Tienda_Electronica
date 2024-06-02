@@ -13,7 +13,7 @@ using Tienda_Electronica.Repositories.Ventas;
 namespace Tienda_Electronica.Controllers
 {
     [Authorize]
-    public class ProductoController : Controller 
+    public class ProductoController : Controller
     {
         //NUEVO---
         private readonly ISqlDataAccess _dataAccess;
@@ -107,7 +107,7 @@ namespace Tienda_Electronica.Controllers
                 return View(producto);
             }
         }
-        
+
         // GET: VentaController/Edit/5
         public async Task<ActionResult> Edit(int id)
         {

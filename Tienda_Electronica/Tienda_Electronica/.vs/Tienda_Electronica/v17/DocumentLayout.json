@@ -3,68 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\validations\\productovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\validations\\productovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\repositories\\inventarios\\inventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\repositories\\inventarios\\inventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\models\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\models\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\validations\\detalleventavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\validations\\detalleventavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\repositories\\clientes\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\repositories\\clientes\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\repositories\\inventarios\\iinventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\repositories\\inventarios\\iinventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\cliente\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\cliente\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\cliente\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\cliente\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\categoria\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\categoria\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\categoria\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\categoria\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\views\\categoria\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\views\\categoria\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|c:\\users\\mineducyt\\onedrive\\escritorio\\proyecto_tienda_electronica\\tienda_electronica\\tienda_electronica\\tienda_electronica\\validations\\ventavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF286037-F205-45D3-9E2D-7A1EDB059EEA}|Tienda_Electronica\\Tienda_Electronica.csproj|solutionrelative:tienda_electronica\\validations\\ventavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,28 +46,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Controllers\\ProductoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:52:32.335Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Validations\\ProductoValidator.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Validations\\ProductoValidator.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Validations\\ProductoValidator.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Validations\\ProductoValidator.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T06:17:34.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoriaController.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\CategoriaController.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\CategoriaController.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\CategoriaController.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Controllers\\CategoriaController.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAqwGkAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T05:57:38.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAAAEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T05:57:27.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T05:57:08.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Controllers\\ProductoController.cs",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAUwOQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T06:20:24.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -105,185 +125,48 @@
               "RelativeDocumentMoniker": "Tienda_Electronica\\Program.cs",
               "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Program.cs",
               "RelativeToolTip": "Tienda_Electronica\\Program.cs",
-              "ViewState": "AQIAABAAAAAAnJmZmZkOwCMAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAAC0AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:45:59.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InventarioController.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\InventarioController.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\InventarioController.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\InventarioController.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Controllers\\InventarioController.cs",
-              "ViewState": "AQIAAHsAAAAAUDMzMzMMwIoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:44:51.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IInventarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Repositories\\Inventarios\\IInventarioRepository.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Repositories\\Inventarios\\IInventarioRepository.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Repositories\\Inventarios\\IInventarioRepository.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Repositories\\Inventarios\\IInventarioRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T20:42:01.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Models\\Cliente.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Models\\Cliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T20:34:32.39Z",
+              "WhenOpened": "2024-06-02T05:35:48.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Inventario.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Models\\Inventario.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Models\\Inventario.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Models\\Inventario.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Models\\Inventario.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAcAAAAAAAAA",
+              "Title": "DetalleVentaValidator.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Validations\\DetalleVentaValidator.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Validations\\DetalleVentaValidator.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Validations\\DetalleVentaValidator.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Validations\\DetalleVentaValidator.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAAB0AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T20:34:32.465Z",
+              "WhenOpened": "2024-06-02T05:28:09.339Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClienteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Repositories\\Clientes\\ClienteRepository.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Repositories\\Clientes\\ClienteRepository.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Repositories\\Clientes\\ClienteRepository.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Repositories\\Clientes\\ClienteRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAXAAAA",
+              "DocumentIndex": 8,
+              "Title": "VentaValidator.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Validations\\VentaValidator.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Validations\\VentaValidator.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Validations\\VentaValidator.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Validations\\VentaValidator.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T20:34:32.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T04:55:09.439Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Controllers\\ClienteController.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAqwF8AAAAQAAAA",
+              "DocumentIndex": 7,
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "Tienda_Electronica\\Controllers\\VentaController.cs",
+              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "Tienda_Electronica\\Controllers\\VentaController.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAiwGsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T20:34:32.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Cliente\\Create.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Cliente\\Create.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Cliente\\Create.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Cliente\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:32.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Categoria\\Create.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Categoria\\Create.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Categoria\\Create.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Categoria\\Create.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:32.412Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Cliente\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Cliente\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Cliente\\Delete.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Cliente\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:32.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Cliente\\Index.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Cliente\\Index.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Cliente\\Index.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Cliente\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:31.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InventarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Repositories\\Inventarios\\InventarioRepository.cs",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Repositories\\Inventarios\\InventarioRepository.cs",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Repositories\\Inventarios\\InventarioRepository.cs",
-              "RelativeToolTip": "Tienda_Electronica\\Repositories\\Inventarios\\InventarioRepository.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAYwDQAAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T21:47:59.414Z",
+              "WhenOpened": "2024-06-02T04:42:28.939Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAACEAAACAmZmZmZkuwDkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:32.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Categoria\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Categoria\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Categoria\\Delete.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Categoria\\Delete.cshtml",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAAoAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:32.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Categoria\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Tienda_Electronica\\Views\\Categoria\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\MINEDUCYT\\OneDrive\\Escritorio\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Views\\Categoria\\Edit.cshtml",
-              "RelativeToolTip": "Tienda_Electronica\\Views\\Categoria\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-27T20:34:32.454Z"
             }
           ]
         }

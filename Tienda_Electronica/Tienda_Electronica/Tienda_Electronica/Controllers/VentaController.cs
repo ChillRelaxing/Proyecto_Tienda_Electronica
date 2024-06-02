@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Tienda_Electronica.Models;
 using Tienda_Electronica.Repositories.Clientes;
-using Tienda_Electronica.Repositories.DetalleVentas;
 using Tienda_Electronica.Repositories.Ventas;
+using Tienda_Electronica.Validations;
 
 namespace Tienda_Electronica.Controllers
 {
@@ -14,48 +14,37 @@ namespace Tienda_Electronica.Controllers
     public class VentaController : Controller
     {
         private readonly IVentaRepository _ventaRepository;
-
-        //
         private readonly IClienteRepository _clienteRepository;
-        //
-
-
-        //Validaciones
-        //private readonly IValidator<Venta> _validator;
+        private readonly IValidator<Venta> _ventavalidator;
 
         public VentaController(
             IVentaRepository ventaRepository,
-            IClienteRepository clienteRepository //AQUI
-
-            //IValidator<Venta> validator
-            )
+            IClienteRepository clienteRepository,
+            IValidator<Venta> ventavalidator
+        )
         {
             _ventaRepository = ventaRepository;
-
-            //
-            _clienteRepository = clienteRepository; //
-            //
-
-            //
-            //_validator = validator;
-
+            _clienteRepository = clienteRepository;
+            _ventavalidator = ventavalidator;
         }
+
         // GET: VentaController
         public async Task<ActionResult> Index()
         {
             var venta = await _ventaRepository.GetAllAsync();
-
             return View(venta);
         }
 
         // GET: VentaController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            var venta = await _ventaRepository.GetByIdAsync(id);
+            if (venta == null)
+                return NotFound();
+            return View(venta);
         }
 
         // GET: VentaController/Create
-        // public ActionResult Create()
         public async Task<ActionResult> Create()
         {
             ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente");
@@ -67,18 +56,23 @@ namespace Tienda_Electronica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Venta venta)
         {
+            ValidationResult validationResult = _ventavalidator.Validate(venta);
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+                ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
+                return View(venta);
+            }
+
             try
             {
                 await _ventaRepository.AddAsync(venta);
-
                 return RedirectToAction(nameof(Index));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                //
                 ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
-                //
                 return View(venta);
             }
         }
@@ -87,14 +81,10 @@ namespace Tienda_Electronica.Controllers
         public async Task<ActionResult> Edit(int id)
         {
             var venta = await _ventaRepository.GetByIdAsync(id);
-
             if (venta == null)
                 return NotFound();
 
-            //
             ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
-            //
-
             return View(venta);
         }
 
@@ -103,20 +93,23 @@ namespace Tienda_Electronica.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Venta venta)
         {
+            ValidationResult validationResult = _ventavalidator.Validate(venta);
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+                ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
+                return View(venta);
+            }
+
             try
             {
                 await _ventaRepository.EditAsync(venta);
-
                 return RedirectToAction(nameof(Index));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-
-                //
                 ViewData["ID_Cliente"] = new SelectList(await _clienteRepository.GetAllAsync(), "ID_Cliente", "Nombre_Cliente", venta.ID_Cliente);
-                //
-
                 return View(venta);
             }
         }
@@ -125,29 +118,27 @@ namespace Tienda_Electronica.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             var venta = await _ventaRepository.GetByIdAsync(id);
-
             if (venta == null)
-            {
                 return NotFound();
-            }
-
             return View(venta);
-
         }
 
         // POST: VentaController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete(Venta venta)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             try
             {
-                await _ventaRepository.DeleteAsync(venta.ID_Venta);
-
+                await _ventaRepository.DeleteAsync(id);
                 return RedirectToAction(nameof(Index));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                ViewBag.Error = ex.Message;
+                var venta = await _ventaRepository.GetByIdAsync(id);
+                if (venta == null)
+                    return NotFound();
                 return View(venta);
             }
         }

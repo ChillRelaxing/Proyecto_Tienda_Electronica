@@ -43,7 +43,7 @@ namespace Tienda_Electronica.Controllers
         {
             _detalleVentaRepository = detalleVentaRepository;
 
-            //
+            //tegoria
             _ventaRepository = ventaRepository;
             _productoRepository = productoRepository;
             //

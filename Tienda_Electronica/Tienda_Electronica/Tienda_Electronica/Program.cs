@@ -45,6 +45,12 @@ builder.Services.AddTransient<IEmailService, EmailService>();
 
 //Inyecion de dependencias de validaciones
 builder.Services.AddScoped<IValidator<DetalleVenta>, DetalleVentaValidator>();
+builder.Services.AddScoped<IValidator<Categoria>, CategoriaValidator>();
+builder.Services.AddScoped<IValidator<Venta>, VentaValidator>();
+builder.Services.AddScoped<IValidator<Producto>, ProductoValidator>();
+
+
+
 
 //Validaciones en espa�ol
 ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("es");

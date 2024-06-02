@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Imagenes\Venta.avif" />
+    <Compile Remove="Imagenes\**" />
+    <Content Remove="Imagenes\**" />
+    <EmbeddedResource Remove="Imagenes\**" />
+    <None Remove="Imagenes\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,10 +31,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     <PackageReference Include="MiniExcel" Version="1.32.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Imagenes\" />
   </ItemGroup>
 
 </Project>
