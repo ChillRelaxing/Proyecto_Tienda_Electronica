@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Tienda_Electronica.Models;
-using Tienda_Electronica.Repositories.Categorias;
 using Tienda_Electronica.Repositories.Clientes;
 using Tienda_Electronica.Services.Email;
+using System.Threading.Tasks;
 
 namespace Tienda_Electronica.Controllers
 {
@@ -13,106 +12,94 @@ namespace Tienda_Electronica.Controllers
     public class ClienteController : Controller
     {
         private readonly IClienteRepository _clienteRepository;
-        //Validaciones
-        //private readonly IValidator<Venta> _validator;
-
-        //Nuevo
         private readonly IEmailService _emailService;
 
-
-        public ClienteController(
-            IClienteRepository clienteRepository,
-
-            //nuevo
-            IEmailService emailService
-
-            //IValidator<Venta> validator
-            )
+        public ClienteController(IClienteRepository clienteRepository, IEmailService emailService)
         {
             _clienteRepository = clienteRepository;
-
-
-            //nuevo
             _emailService = emailService;
-
-            //
-            //_validator = validator;
         }
 
-
-        // GET: VentaController
+        // GET: ClienteController
         public async Task<ActionResult> Index()
         {
-            var cliente = await _clienteRepository.GetAllAsync();
+            var clientes = await _clienteRepository.GetAllAsync();
+            return View(clientes);
+        }
 
+        // GET: ClienteController/Details/5
+        public async Task<ActionResult> Details(int id)
+        {
+            var cliente = await _clienteRepository.GetByIdAsync(id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
             return View(cliente);
         }
 
-        // GET: VentaController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: VentaController/Create
+        // GET: ClienteController/Create
         public async Task<ActionResult> Create()
         {
-            
-            var cliente = await _clienteRepository.GetAllAsync();
-           
+            var clientes = await _clienteRepository.GetAllAsync();
+            ViewBag.Clientes = new SelectList(clientes, "ID_Cliente", "Nombre_Cliente");
             return View();
         }
 
-        // POST: VentaController/Create
+        // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Cliente cliente)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(cliente);
+            }
+
             try
             {
                 await _clienteRepository.AddAsync(cliente);
 
-                //nuevo
-                // "Ramiro@gmail.com";
+                // Enviar correo electrónico
                 string email = cliente.Email_Cliente;
                 string subject = "Bienvenido";
-                string body = "Bievenido a la tienda" + cliente.Nombre_Cliente;
+                string body = $"Bienvenido a la tienda, {cliente.Nombre_Cliente}";
 
-                _emailService.SendEmail(email, cliente.Nombre_Cliente, subject, body);
-
-                //
+                _emailService.SendEmail(email, subject, body);
 
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-
                 return View(cliente);
             }
         }
 
-
-        // GET: VentaController/Edit/5
+        // GET: ClienteController/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
             var cliente = await _clienteRepository.GetByIdAsync(id);
-
             if (cliente == null)
+            {
                 return NotFound();
-
+            }
             return View(cliente);
         }
 
-        // POST: VentaController/Edit/5
+        // POST: ClienteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Cliente cliente)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(cliente);
+            }
+
             try
             {
                 await _clienteRepository.EditAsync(cliente);
-
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -122,36 +109,33 @@ namespace Tienda_Electronica.Controllers
             }
         }
 
-        // GET: VentaController/Delete/5
+        // GET: ClienteController/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
             var cliente = await _clienteRepository.GetByIdAsync(id);
-
             if (cliente == null)
             {
                 return NotFound();
             }
-
             return View(cliente);
-
         }
 
-        // POST: VentaController/Delete/5
-        [HttpPost]
+        // POST: ClienteController/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Delete(Cliente cliente)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             try
             {
-                await _clienteRepository.DeleteAsync(cliente.ID_Cliente);
-
+                await _clienteRepository.DeleteAsync(id);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                return View(cliente);
+                ViewBag.Error = ex.Message;
+                var cliente = await _clienteRepository.GetByIdAsync(id);
+                return View("Delete", cliente);
             }
         }
     }
 }
-

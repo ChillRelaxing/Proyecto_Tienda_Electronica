@@ -25,11 +25,12 @@ namespace Tienda_Electronica.Models
         public string Direccion_Cliente { get; set; }
 
 
-        [Required(ErrorMessage = "El telefono de cliente es obligatorio")]
-        [StringLength(100, MinimumLength = 8, ErrorMessage = "El telefono del cliente debe tener entre 8 y 100 caracteres")]
-        [RegularExpression(@"^[0-9\s]+$", ErrorMessage = "El telefono del cliente solo debe contener numeros y espacios")]
-        [Display(Name = "Telefono del Cliente")]
+        [Required(ErrorMessage = "El teléfono de cliente es obligatorio")]
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "El teléfono del cliente debe tener entre 8 y 100 caracteres")]
+        [RegularExpression(@"^[0-9-]+$", ErrorMessage = "El teléfono del cliente solo debe contener números y guiones")]
+        [Display(Name = "Teléfono del Cliente")]
         public string Telefono_Cliente { get; set; }
+
 
 
         [Required(ErrorMessage = "El correo del cliente es obligatorio")]
