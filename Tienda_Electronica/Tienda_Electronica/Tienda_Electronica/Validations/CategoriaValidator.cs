@@ -8,7 +8,7 @@ namespace Tienda_Electronica.Validations
         public CategoriaValidator()
         {
             RuleFor(categoria => categoria.Nombre_Categoria)
-              .NotNull().WithMessage("El nombre de la categoria es obligatorio")
+              .NotNull().WithMessage("El nombre de la categoria es obligatoria")
               .NotEmpty().WithMessage("El nombre de la categoria no debe estar vacío")
               .MinimumLength(3).WithMessage("El nombre de la categoria debe tener al menos 3 caracteres")
               .MaximumLength(100).WithMessage("El nombre de la categoria debe tener un máximo de 100 caracteres")

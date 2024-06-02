@@ -46,6 +46,43 @@ namespace Tienda_Electronica.Controllers
         }
 
 
+
+        //GET: DetalleVentaController/Create
+        // public ActionResult Create()
+        public async Task<ActionResult> Create()
+        {
+            //
+            var categorias = await _categoriaRepository.GetAllAsync();
+            ViewBag.Ventas = new SelectList(categorias, "ID_Categoria", "Nombre_Categoria", "Descripcion_Categoria");
+            
+            //
+            return View();
+        }
+
+
+
+        // POST: VentaController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(Categoria categoria)
+        {
+            try
+            {
+                await _categoriaRepository.AddAsync(categoria);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+
+
+                return View(categoria);
+            }
+        }
+
+
+
         // GET: VentaController/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
