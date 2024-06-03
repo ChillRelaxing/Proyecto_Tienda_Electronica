@@ -2,9 +2,10 @@
 
 @{
     ViewData["Title"] = "Index";
+    ViewData["TitleHeader"] = "Detalle de las ventas";
 }
 
-<h1>Detalle de las ventas</h1>
+@* <h1>Detalle de las ventas</h1> *@
 
 <p>
     <a asp-action="Create" class="btn btn-primary">Agregar Nueva venta</a>
@@ -60,8 +61,8 @@
                     @Html.ActionLink("Delete", "Delete", new { id = item.ID_DetalleVenta }) *@
 
                     <center>
-                        <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID_DetalleVenta})">Editar</a>
-                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID_DetalleVenta })">Eliminar</a>
+                        @* <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID_DetalleVenta})">Editar</a>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID_DetalleVenta })">Eliminar</a> *@
                     </center>
                 </td>
             </tr>

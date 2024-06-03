@@ -7,10 +7,6 @@ namespace Tienda_Electronica.Validations
         public ClienteValidator()
         {
 
-            RuleFor(Cliente => Cliente.ID_Cliente)
-                .NotNull().WithMessage("El nombre del Cliente es obligatorio")
-                .NotEmpty().WithMessage("El nombre del Cliente no debe estar vacío");
-
             RuleFor(cliente => cliente.Nombre_Cliente)
               .NotNull().WithMessage("El nombre del cliente es obligatorio")
               .NotEmpty().WithMessage("El nombre del cliente no debe estar vacío")

@@ -8924,19 +8924,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MINEDUCYT\\.nuget\\packages\\": {}
+    "C:\\Users\\L e  o\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+      "projectUniqueName": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
       "projectName": "Tienda_Electronica",
-      "projectPath": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
-      "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MINEDUCYT\\Desktop\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\obj\\",
+      "projectPath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica.csproj",
+      "packagesPath": "C:\\Users\\L e  o\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\L e  o\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

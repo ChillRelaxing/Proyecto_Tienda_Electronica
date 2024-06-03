@@ -7,6 +7,7 @@ using Tienda_Electronica.Services.Email;
 using System.Threading.Tasks;
 using FluentValidation;
 using Tienda_Electronica.Validations;
+using FluentValidation.Results;
 
 namespace Tienda_Electronica.Controllers
 {
@@ -17,10 +18,11 @@ namespace Tienda_Electronica.Controllers
         private readonly IEmailService _emailService;
 
         private readonly IValidator<Cliente> _clienteValidator;
-        public ClienteController(IClienteRepository clienteRepository, IEmailService emailService)
+        public ClienteController(IClienteRepository clienteRepository, IEmailService emailService, IValidator<Cliente> clienteValidator)
         {
             _clienteRepository = clienteRepository;
             _emailService = emailService;
+            _clienteValidator = clienteValidator;
         }
 
         // GET: ClienteController
@@ -49,15 +51,12 @@ namespace Tienda_Electronica.Controllers
             return View();
         }
 
-        // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Cliente cliente)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(cliente);
-            }
+            //Validaciones
+            ValidationResult validationResult = _clienteValidator.Validate(cliente);
 
             try
             {
@@ -66,15 +65,18 @@ namespace Tienda_Electronica.Controllers
                 // Enviar correo electrónico
                 string email = cliente.Email_Cliente;
                 string subject = "Bienvenido";
-                string body = $"Bienvenido a la tienda, {cliente.Nombre_Cliente}";
+                string body = $"Bienvenido a la tienda" + cliente.Nombre_Cliente;
 
-                _emailService.SendEmail(email, subject, body);
+                _emailService.SendEmail(email, cliente.Nombre_Cliente, subject, body);
 
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
+
+                validationResult.AddToModelState(this.ModelState);
+
                 return View(cliente);
             }
         }
@@ -102,6 +104,7 @@ namespace Tienda_Electronica.Controllers
                 await _clienteRepository.EditAsync(cliente);
 
                 return RedirectToAction(nameof(Index));
+
             }
             catch (Exception ex)
             {

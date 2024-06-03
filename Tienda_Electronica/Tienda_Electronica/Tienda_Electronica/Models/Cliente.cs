@@ -5,7 +5,6 @@ namespace Tienda_Electronica.Models
     public class Cliente
     {
         //Modelo Cliente
-        [Required(ErrorMessage = "El nombre del cliente es obligatorio")]
         [Display(Name = "ID Cliente")]
         public int ID_Cliente { get; set; }
 
