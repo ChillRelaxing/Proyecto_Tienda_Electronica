@@ -10,3 +10,7 @@ Cintia Lissbeth Alvarado Robles
 
 ----------------------------------------------------------------
 Sistema a realizar: Gestión de una tienda de electrónica
+
+----------------------------------------------------------------
+Link del repo:
+https://github.com/ChillRelaxing/Proyecto_Tienda_Electronica.git
