@@ -5,22 +5,22 @@ use DB_Tienda_Electronica
 go
 
 ----------------------------------
+----------------------------------ORDEN DE ELIMINACION
+
+select * from DetalleVenta 
+
+select * from Inventario
+
+select * from Venta
+
+select * from Producto
+
+select * from Cliente 
+
+select * from Categoria 
+
 ----------------------------------
-
-select * from Categoria ---F
-
-select * from DetalleVenta ---Yo
-
-select * from Inventario ---Yo
-
-select * from Cliente ---F
-
-select * from Producto ---Yo
-
-select * from Venta --F
-
-----------------------------------
-----------------------------------
+----------------------------------PROCEDIMIENTOS ALMACENADOS
 
 CREATE PROCEDURE dbo.spVenta_GetAll
 AS
@@ -69,10 +69,8 @@ BEGIN
     WHERE ID_Venta = @ID_Venta
 END;
 
-EXEC dbo.spVenta_Update '2025-05-13 00:00:00.000', 2000.98, 'Venta televisores', 1, 1
-
+EXEC dbo.spVenta_Update '2024-05-04 21:55:00.000', 0.00, 'Venta reciente', 17, 21
 SELECT * FROM Venta
-
 
 ----------------------------------
 
@@ -103,7 +101,7 @@ BEGIN
     DELETE FROM Venta WHERE ID_Venta = @ID_Venta
 END;
 
-EXEC dbo.spVenta_Delete 3
+EXEC dbo.spVenta_Delete 21
 
 ----------------------------------
 ----------------------------------
@@ -204,7 +202,7 @@ BEGIN
 	WHERE ID_DetalleVenta = @ID_DetalleVenta
 END;
 
-EXEC dbo.spDetalleVenta_Update 1, 3, 500, 100.00, 2, 2
+EXEC dbo.spDetalleVenta_Update 1, 3, 300, 100.00, 2, 2
 
 SELECT * FROM DetalleVenta
 
@@ -487,7 +485,7 @@ BEGIN
 	DELETE FROM Cliente WHERE ID_Cliente = @ID_Cliente
 END;
 
-EXEC dbo.spCliente_Delete 3
+EXEC dbo.spCliente_Delete 17
 
 ----------------------------------
 ----------------------------------
@@ -631,50 +629,6 @@ CREATE TABLE Cliente (
     Email_Cliente NVARCHAR(100) NOT NULL
 );
 
-
-INSERT INTO Categoria (Nombre_Categoria, Descripcion_Categoria)
-VALUES ('Electrónica', 'Productos electrónicos como televisores, radios, etc.'),
-       ('Ropa', 'Ropa y accesorios'),
-       ('Alimentos', 'Productos alimenticios');
-
-INSERT INTO Producto (Nombre_Producto, Descripcion_Producto, PrecioUnitario, ID_Categoria)
-VALUES ('Televisor', 'Televisor de 40 pulgadas', 300.00, 1),
-       ('Radio', 'Radio AM/FM', 50.00, 1),
-       ('Camisa', 'Camisa de algodón', 20.00, 2),
-       ('Pantalones', 'Pantalones de mezclilla', 30.00, 2),
-       ('Manzanas', 'Manzanas frescas por kg', 3.00, 3),
-       ('Leche', 'Leche en cartón de 1 litro', 1.50, 3);
-
-
-INSERT INTO Cliente (Nombre_Cliente, Direccion_Cliente, Telefono_Cliente, Email_Cliente)
-VALUES ('Juan Pérez', 'Calle Falsa 123', '123456789', 'juan.perez@example.com'),
-       ('María López', 'Avenida Siempre Viva 456', '987654321', 'maria.lopez@example.com'),
-       ('Carlos Sánchez', 'Boulevard de los Sueños 789', '456123789', 'carlos.sanchez@example.com');
-
--- Suponiendo que ya tienes IDs de clientes existentes
-INSERT INTO Venta (FechaVenta, Total_Venta, Descripcion_Venta, ID_Cliente)
-VALUES (GETDATE(), 10, 'Venta de prueba', 1),
-       (GETDATE(), 20, 'Venta de prueba 2', 2);
-
--- Suponiendo que ya tienes IDs de ventas y productos existentes
-INSERT INTO DetalleVenta (Cantidad, SubTotal, PrecioUnitario, ID_Venta, ID_Producto)
-VALUES (1, 300.00, 300.00, 1, 1),
-       (2, 60.00, 30.00, 1, 4),
-       (5, 7.50, 1.50, 2, 6);
-
-
--- Suponiendo que ya tienes IDs de productos existentes
-INSERT INTO Inventario (Cantidad, FechaRegistro, ID_Producto)
-VALUES (50, GETDATE(), 1),
-       (100, GETDATE(), 2),
-       (200, GETDATE(), 3),
-       (150, GETDATE(), 4),
-       (500, GETDATE(), 5),
-       (300, GETDATE(), 6);
-
-
-
-
 ---------------------------------------------
 ---------------------------------------------
 ---------------------------------------------
@@ -705,7 +659,7 @@ END;
 ---------------------------------------------
 ---------------------------------------------
 
-ALTER PROCEDURE dbo.spDetalleVenta_Insert
+CREATE PROCEDURE dbo.spDetalleVenta_Insert
 (
     @Cantidad INT,
     @SubTotal DECIMAL(18, 2),
@@ -770,3 +724,9 @@ BEGIN
     -- Actualizar el Total_Venta
     EXEC dbo.spActualizarTotalVenta @ID_Venta;
 END;
+
+----------------------------------------------
+----------------------------------------------
+
+EXEC dbo.spDetalleVenta_Delete 1
+SELECT * FROM DetalleVenta

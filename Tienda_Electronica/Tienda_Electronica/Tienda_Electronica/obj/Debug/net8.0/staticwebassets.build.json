@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p/dclE8RuhzlTG89LFWxzxBVHbW+hjlVgp/6FbJUsEQ=",
+  "Hash": "qTn2JHI5dNSErMaeOt+1NEu35VugpNZ/mSr+/D8MNlQ=",
   "Source": "Tienda_Electronica",
   "BasePath": "_content/Tienda_Electronica",
   "Mode": "Default",
@@ -1518,6 +1518,25 @@
       "OriginalItemSpec": "wwwroot\\fonts\\materialdesignicons-webfont.woff2"
     },
     {
+      "Identity": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\wwwroot\\images\\Admin.png",
+      "SourceId": "Tienda_Electronica",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\wwwroot\\",
+      "BasePath": "_content/Tienda_Electronica",
+      "RelativePath": "images/Admin.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Admin.png"
+    },
+    {
       "Identity": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\wwwroot\\images\\auth\\reset-password.svg",
       "SourceId": "Tienda_Electronica",
       "SourceType": "Discovered",
@@ -2124,6 +2143,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\lead\\lead-6.png"
+    },
+    {
+      "Identity": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\wwwroot\\images\\Logo.png",
+      "SourceId": "Tienda_Electronica",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\wwwroot\\",
+      "BasePath": "_content/Tienda_Electronica",
+      "RelativePath": "images/Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Logo.png"
     },
     {
       "Identity": "C:\\Users\\L e  o\\Downloads\\Proyecto_Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\Tienda_Electronica\\wwwroot\\images\\logo\\logo.svg",
